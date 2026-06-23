@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Navbar from "./Navbar";
 
 const easing: [number, number, number, number] = [0.25, 0.1, 0.25, 1];
 
@@ -59,48 +60,7 @@ export default function HeroSection() {
       </motion.div>
 
       {/* Navbar */}
-      <motion.nav
-        className="relative mx-auto max-w-[1280px] px-5 flex items-center justify-between h-[84px]"
-        style={{ zIndex: 10 }}
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
-      >
-        {/* Logo */}
-        <a href="/" className="flex items-baseline gap-0">
-          <span
-            className="text-white text-[16px] leading-normal"
-            style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 400 }}
-          >
-            brunobragaia
-          </span>
-          <span
-            className="text-[#bf0603] text-[16px] leading-normal"
-            style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 600 }}
-          >
-            design
-          </span>
-        </a>
-
-        {/* Nav links */}
-        <div
-          className="flex items-center gap-10 text-white text-[12px] tracking-[2.4px]"
-          style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 500 }}
-        >
-          <a href="#trabalhos" className="hover:text-[#bf0603] transition-colors">TRABALHOS</a>
-          <a href="#servicos" className="hover:text-[#bf0603] transition-colors">SERVIÇOS</a>
-          <a href="#orcamento" className="hover:text-[#bf0603] transition-colors">ORÇAMENTO</a>
-        </div>
-
-        {/* CTA button */}
-        <a
-          href="#orcamento"
-          className="bg-[#bf0603] text-white text-[14px] px-5 h-11 flex items-center justify-center rounded-full hover:bg-[#a00502] transition-colors"
-          style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 500 }}
-        >
-          Vamos conversar?
-        </a>
-      </motion.nav>
+      <Navbar animate />
 
       {/* Hero content */}
       <div className="relative mx-auto max-w-[1280px] px-5 flex flex-col gap-14 py-32" style={{ zIndex: 10 }}>
