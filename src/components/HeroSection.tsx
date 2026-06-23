@@ -3,20 +3,14 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
+const easing: [number, number, number, number] = [0.25, 0.1, 0.25, 1];
+
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
   visible: (delay: number) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay },
-  }),
-};
-
-const fadeIn = {
-  hidden: { opacity: 0 },
-  visible: (delay: number) => ({
-    opacity: 1,
-    transition: { duration: 1, ease: "easeOut", delay },
+    transition: { duration: 0.8, ease: easing, delay },
   }),
 };
 
