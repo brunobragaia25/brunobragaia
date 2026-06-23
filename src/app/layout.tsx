@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
   title: "Bruno Bragaia Design",
@@ -25,6 +26,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full bg-[#0b0b0b] text-white antialiased">
+        <Navbar />
         {children}
       </body>
     </html>
