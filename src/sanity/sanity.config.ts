@@ -1,13 +1,13 @@
 import { defineConfig } from "sanity";
 import { structureTool } from "sanity/structure";
-import { visionTool } from "@sanity/vision";
 import { schemaTypes } from "./schemaTypes";
 
 export default defineConfig({
-  name: "brunobragaia",
+  name: "default",
   title: "Bruno Bragaia Design",
   projectId: "gscelzaq",
   dataset: "production",
-  plugins: [structureTool(), visionTool()],
+  basePath: "/studio",
+  plugins: [structureTool()],
   schema: { types: schemaTypes },
 });

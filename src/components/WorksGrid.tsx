@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Project } from "./WorksSection";
 
@@ -7,6 +8,7 @@ const easing: [number, number, number, number] = [0.25, 0.1, 0.25, 1];
 
 function FeaturedCard({ project, image, index }: { project: Project; image: string; index: number }) {
   return (
+    <Link href={`/trabalhos/${project.slug.current}`}>
     <motion.div
       className="group relative overflow-hidden cursor-pointer"
       initial={{ opacity: 0, y: 60 }}
@@ -38,11 +40,13 @@ function FeaturedCard({ project, image, index }: { project: Project; image: stri
         </span>
       </div>
     </motion.div>
+    </Link>
   );
 }
 
 function GridCard({ project, image, index }: { project: Project; image: string; index: number }) {
   return (
+    <Link href={`/trabalhos/${project.slug.current}`}>
     <motion.div
       className="group relative overflow-hidden cursor-pointer"
       initial={{ opacity: 0, y: 40 }}
@@ -74,6 +78,7 @@ function GridCard({ project, image, index }: { project: Project; image: string; 
         </span>
       </div>
     </motion.div>
+    </Link>
   );
 }
 
