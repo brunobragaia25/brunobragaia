@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Footer from "./Footer";
+import Navbar from "./Navbar";
 
 const easing: [number, number, number, number] = [0.25, 0.1, 0.25, 1];
 
@@ -47,8 +48,9 @@ export default function CaseStudy({
 }: Props) {
   return (
     <main className="bg-[#0b0b0b] text-white min-h-screen">
+      <Navbar />
       {/* Back link */}
-      <div className="px-5 pt-10 pb-0">
+      <div className="px-5 pt-24 pb-0">
         <Link
           href="/"
           className="inline-flex items-center gap-2 text-[#a8a8a8] text-[13px] hover:text-white transition-colors"
