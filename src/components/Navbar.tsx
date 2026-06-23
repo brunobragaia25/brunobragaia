@@ -6,7 +6,6 @@ import Link from "next/link";
 export default function Navbar({ animate = false }: { animate?: boolean }) {
   const nav = (
     <nav className="w-full max-w-[1280px] mx-auto px-5 flex items-center justify-between h-[84px]" style={{ zIndex: 10 }}>
-      {/* Logo */}
       <Link href="/" className="flex items-baseline gap-0">
         <span
           className="text-white text-[16px] leading-normal"
@@ -22,17 +21,22 @@ export default function Navbar({ animate = false }: { animate?: boolean }) {
         </span>
       </Link>
 
-      {/* Nav links */}
       <div
         className="flex items-center gap-10 text-white text-[12px] tracking-[2.4px]"
         style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 500 }}
       >
-        <Link href="/#trabalhos" className="hover:text-[#bf0603] transition-colors">TRABALHOS</Link>
-        <Link href="/#servicos" className="hover:text-[#bf0603] transition-colors">SERVIÇOS</Link>
-        <Link href="/#orcamento" className="hover:text-[#bf0603] transition-colors">ORÇAMENTO</Link>
+        {[
+          { label: "TRABALHOS", href: "/#trabalhos" },
+          { label: "SERVIÇOS", href: "/#servicos" },
+          { label: "ORÇAMENTO", href: "/#orcamento" },
+        ].map((item) => (
+          <Link key={item.label} href={item.href} className="group relative overflow-hidden inline-block" style={{ lineHeight: "1em", height: "1em" }}>
+            <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-[100%]">{item.label}</span>
+            <span className="block absolute inset-x-0 top-[100%] transition-transform duration-300 ease-out group-hover:-translate-y-[100%]">{item.label}</span>
+          </Link>
+        ))}
       </div>
 
-      {/* CTA */}
       <Link
         href="/#orcamento"
         className="bg-[#bf0603] text-white text-[14px] px-5 h-11 flex items-center justify-center rounded-full hover:bg-[#a00502] transition-colors"

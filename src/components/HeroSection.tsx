@@ -60,7 +60,9 @@ export default function HeroSection() {
       </motion.div>
 
       {/* Navbar */}
-      <Navbar animate />
+      <div style={{ position: "relative", zIndex: 20 }}>
+        <Navbar animate />
+      </div>
 
       {/* Hero content */}
       <div className="relative mx-auto max-w-[1280px] px-5 flex flex-col gap-14 py-32" style={{ zIndex: 10 }}>

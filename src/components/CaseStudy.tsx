@@ -49,20 +49,18 @@ export default function CaseStudy({
   return (
     <main className="bg-[#0b0b0b] text-white min-h-screen">
       <Navbar />
-      {/* Back link */}
-      <div className="px-5 pt-24 pb-0">
-        <Link
-          href="/"
-          className="inline-flex items-center gap-2 text-[#a8a8a8] text-[13px] hover:text-white transition-colors"
-          style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 500 }}
-        >
-          <span>←</span> Voltar
-        </Link>
-      </div>
 
       {/* Hero */}
-      <section className="px-5 pt-16 pb-20">
+      <section className="px-5 pt-28 pb-20">
         <div className="max-w-[1280px] mx-auto">
+          {/* Back link */}
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 border border-white/20 rounded-full px-4 h-8 text-[#a8a8a8] text-[11px] tracking-[2px] uppercase hover:border-white/50 hover:text-white transition-colors mb-12 mt-8"
+            style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 500 }}
+          >
+            <span>←</span> Voltar
+          </Link>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
