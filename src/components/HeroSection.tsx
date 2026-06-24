@@ -109,17 +109,23 @@ export default function HeroSection() {
         >
           <a
             href="#orcamento"
-            className="bg-[#bf0603] text-white text-[14px] px-5 h-11 flex items-center justify-center rounded-full hover:bg-[#a00502] transition-colors"
-            style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 500 }}
+            className="group overflow-hidden bg-[#bf0603] text-white text-[13px] tracking-[2px] uppercase px-8 h-12 flex items-center justify-center rounded-full hover:bg-white hover:text-[#0b0b0b] transition-colors duration-300"
+            style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 600 }}
           >
-            Vamos conversar?
+            <span className="relative inline-block overflow-hidden" style={{ lineHeight: "1em", height: "1em" }}>
+              <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-[100%]">Vamos conversar</span>
+              <span className="block absolute inset-x-0 top-[100%] transition-transform duration-300 ease-out group-hover:-translate-y-[100%]">Vamos conversar</span>
+            </span>
           </a>
           <a
             href="#trabalhos"
-            className="border border-white text-white text-[14px] px-5 h-11 flex items-center justify-center rounded-full hover:bg-white hover:text-[#0b0b0b] transition-colors"
-            style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 500 }}
+            className="group overflow-hidden border border-white text-white text-[13px] tracking-[2px] uppercase px-8 h-12 flex items-center justify-center rounded-full transition-colors duration-300"
+            style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 600 }}
           >
-            Meus trabalhos
+            <span className="relative inline-block overflow-hidden" style={{ lineHeight: "1em", height: "1em" }}>
+              <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-[100%]">Meus trabalhos</span>
+              <span className="block absolute inset-x-0 top-[100%] transition-transform duration-300 ease-out group-hover:-translate-y-[100%]">Meus trabalhos</span>
+            </span>
           </a>
         </motion.div>
 

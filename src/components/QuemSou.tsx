@@ -94,10 +94,13 @@ export default function QuemSou() {
               <div className="flex gap-4 pt-4">
                 <a
                   href="/orcamento"
-                  className="bg-[#bf0603] text-white text-[13px] tracking-[2px] uppercase px-8 h-12 rounded-full flex items-center hover:bg-white hover:text-[#0b0b0b] transition-colors duration-300"
+                  className="group overflow-hidden bg-[#bf0603] text-white text-[13px] tracking-[2px] uppercase px-8 h-12 rounded-full flex items-center hover:bg-white hover:text-[#0b0b0b] transition-colors duration-300"
                   style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 600 }}
                 >
-                  Vamos conversar?
+                  <span className="relative inline-block overflow-hidden" style={{ lineHeight: "1em", height: "1em" }}>
+                    <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-[100%]">Vamos conversar</span>
+                    <span className="block absolute inset-x-0 top-[100%] transition-transform duration-300 ease-out group-hover:-translate-y-[100%]">Vamos conversar</span>
+                  </span>
                 </a>
                 <a
                   href="/#trabalhos"

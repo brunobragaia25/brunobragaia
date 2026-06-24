@@ -111,14 +111,17 @@ export default function WorksGrid({
 
         <motion.a
           href="/trabalhos"
-          className="border border-white text-white text-[14px] px-5 h-11 flex items-center justify-center rounded-full hover:bg-white hover:text-[#0b0b0b] transition-colors mb-2"
-          style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 500 }}
+          className="group overflow-hidden border border-white text-white text-[13px] tracking-[2px] uppercase px-8 h-12 flex items-center justify-center rounded-full transition-colors duration-300 mb-2"
+          style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 600 }}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.3 }}
         >
-          Ver todos
+          <span className="relative inline-block overflow-hidden" style={{ lineHeight: "1em", height: "1em" }}>
+            <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-[100%]">Ver todos</span>
+            <span className="block absolute inset-x-0 top-[100%] transition-transform duration-300 ease-out group-hover:-translate-y-[100%]">Ver todos</span>
+          </span>
         </motion.a>
       </div>
 

@@ -33,14 +33,17 @@ export default function Footer() {
             {/* CTA */}
             <motion.a
               href="mailto:bruninhugood@gmail.com"
-              className="inline-flex items-center justify-center bg-[#bf0603] text-white rounded-full px-8 h-12 text-[13px] uppercase tracking-[2px] hover:bg-white hover:text-[#0b0b0b] transition-colors duration-300"
+              className="group overflow-hidden inline-flex items-center justify-center bg-[#bf0603] text-white rounded-full px-8 h-12 text-[13px] uppercase tracking-[2px] hover:bg-white hover:text-[#0b0b0b] transition-colors duration-300"
               style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 600 }}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2, ease: easing }}
             >
-              Vamos conversar
+              <span className="relative inline-block overflow-hidden" style={{ lineHeight: "1em", height: "1em" }}>
+                <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-[100%]">Vamos conversar</span>
+                <span className="block absolute inset-x-0 top-[100%] transition-transform duration-300 ease-out group-hover:-translate-y-[100%]">Vamos conversar</span>
+              </span>
             </motion.a>
           </div>
 

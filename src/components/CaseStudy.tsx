@@ -56,10 +56,14 @@ export default function CaseStudy({
           {/* Back link */}
           <Link
             href="/"
-            className="inline-flex items-center gap-2 border border-white/20 rounded-full px-4 h-8 text-[#a8a8a8] text-[11px] tracking-[2px] uppercase hover:border-white/50 hover:text-white transition-colors mb-12 mt-8"
+            className="group overflow-hidden inline-flex items-center gap-2 border border-white/20 rounded-full px-6 h-10 text-[#a8a8a8] text-[12px] tracking-[2px] uppercase hover:border-white/50 hover:text-white transition-colors duration-300 mb-12 mt-8"
             style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 500 }}
           >
-            <span>←</span> Voltar
+            <span>←</span>
+            <span className="relative inline-block overflow-hidden" style={{ lineHeight: "1em", height: "1em" }}>
+              <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-[100%]">Voltar</span>
+              <span className="block absolute inset-x-0 top-[100%] transition-transform duration-300 ease-out group-hover:-translate-y-[100%]">Voltar</span>
+            </span>
           </Link>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

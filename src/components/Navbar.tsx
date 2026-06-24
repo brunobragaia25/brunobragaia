@@ -10,6 +10,7 @@ export default function Navbar({ animate = false }: { animate?: boolean }) {
   const links = [
     { label: "TRABALHOS", href: "/#trabalhos" },
     { label: "SERVIÇOS", href: "/#servicos" },
+    { label: "ETAPAS", href: "/#processo" },
     { label: "QUEM SOU", href: "/quem-sou" },
   ];
 
@@ -31,8 +32,11 @@ export default function Navbar({ animate = false }: { animate?: boolean }) {
       </div>
 
       {/* Desktop CTA */}
-      <Link href="/orcamento" className="hidden md:flex bg-[#bf0603] text-white text-[14px] px-5 h-11 items-center justify-center rounded-full hover:bg-[#a00502] transition-colors" style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 500 }}>
-        Vamos conversar?
+      <Link href="/orcamento" className="hidden md:flex bg-[#bf0603] text-white text-[13px] tracking-[2px] uppercase px-8 h-12 items-center justify-center rounded-full hover:bg-white hover:text-[#0b0b0b] transition-colors duration-300 group overflow-hidden" style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 600 }}>
+        <span className="relative inline-block overflow-hidden" style={{ lineHeight: "1em", height: "1em" }}>
+          <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-[100%]">Vamos conversar</span>
+          <span className="block absolute inset-x-0 top-[100%] transition-transform duration-300 ease-out group-hover:-translate-y-[100%]">Vamos conversar</span>
+        </span>
       </Link>
 
       {/* Mobile hamburger / X */}
@@ -88,7 +92,7 @@ export default function Navbar({ animate = false }: { animate?: boolean }) {
                 className="flex items-center justify-center bg-[#bf0603] text-white text-[14px] h-12 rounded-full w-full"
                 style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 500 }}
               >
-                Vamos conversar?
+                Vamos conversar
               </Link>
             </div>
           </motion.div>
