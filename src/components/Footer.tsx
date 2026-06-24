@@ -9,7 +9,7 @@ const easing: [number, number, number, number] = [0.25, 0.1, 0.25, 1];
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0b0b0b] border-t border-white/10 pt-16 pb-0 overflow-hidden">
+    <footer className="bg-black border-t border-white/10 pt-16 pb-0 overflow-hidden">
       <div className="px-5 max-w-[1280px] mx-auto">
         {/* Top row */}
         <div className="flex flex-col md:flex-row items-start justify-between gap-16 mb-20">

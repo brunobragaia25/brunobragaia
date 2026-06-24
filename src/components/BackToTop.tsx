@@ -19,7 +19,7 @@ export default function BackToTop() {
       {visible && (
         <motion.button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="fixed right-6 bottom-24 z-50 flex items-center gap-2 border border-white/20 bg-[#0b0b0b]/80 backdrop-blur-md text-white text-[11px] tracking-[2px] uppercase px-5 h-10 rounded-full hover:border-white/60 transition-colors duration-300"
+          className="fixed right-6 bottom-24 z-50 flex items-center gap-2 border border-white/20 bg-black/80 backdrop-blur-md text-white text-[11px] tracking-[2px] uppercase px-5 h-10 rounded-full hover:border-white/60 transition-colors duration-300"
           style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 500 }}
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}

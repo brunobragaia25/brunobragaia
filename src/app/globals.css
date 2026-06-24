@@ -37,7 +37,7 @@ html {
 }
 
 :root {
-  --background: #0b0b0b;
+  --background: #000000;
   --foreground: #ffffff;
   --accent: #bf0603;
   --muted: #a8a8a8;
@@ -51,8 +51,13 @@ p[style*="PP Neue Montreal"] {
   letter-spacing: 0.03em;
 }
 
+@keyframes marquee {
+  from { transform: translateX(0%); }
+  to { transform: translateX(-50%); }
+}
+
 body {
-  background: var(--background);
+  background: #000000;
   color: var(--foreground);
   font-family: 'Clash Grotesk', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;

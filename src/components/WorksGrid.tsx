@@ -92,7 +92,7 @@ export default function WorksGrid({
   imageMap: Record<string, string>;
 }) {
   return (
-    <section id="trabalhos" className="bg-[#0b0b0b] pt-32 pb-16 px-5">
+    <section id="trabalhos" className="bg-black pt-32 pb-16 px-5">
       {/* Header */}
       <div className="max-w-[1280px] mx-auto mb-16 flex flex-col md:flex-row items-start md:items-end justify-between gap-6">
         <motion.div

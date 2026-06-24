@@ -11,7 +11,7 @@ const tools = ["Figma", "Adobe Photoshop", "Adobe Illustrator", "After Effects",
 
 export default function QuemSou() {
   return (
-    <main className="bg-[#0b0b0b] text-white min-h-screen">
+    <main className="bg-black text-white min-h-screen">
       <Navbar />
 
       <section className="relative px-5 pt-36 pb-0">

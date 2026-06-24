@@ -26,7 +26,7 @@ const entregas = [
 
 export default function ServicosSection() {
   return (
-    <section id="servicos" className="bg-[#0b0b0b] pt-16 pb-32 px-5">
+    <section id="servicos" className="bg-black pt-16 pb-32 px-5">
       <div className="max-w-[1280px] mx-auto">
 
         {/* Eyebrow + título */}

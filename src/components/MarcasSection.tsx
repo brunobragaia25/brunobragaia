@@ -38,7 +38,7 @@ const logos = [
 
 export default function MarcasSection() {
   return (
-    <section className="bg-[#0b0b0b]">
+    <section className="bg-black">
       <motion.div
         className="border-t border-white/10 grid grid-cols-2 md:grid-cols-7"
         initial={{ opacity: 0 }}

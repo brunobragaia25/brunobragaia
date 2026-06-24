@@ -55,7 +55,7 @@ export default function Navbar({ animate = false }: { animate?: boolean }) {
           {nav}
         </motion.div>
       ) : (
-        <div className="fixed top-0 left-0 right-0 z-[60] bg-[#0b0b0b]/80 backdrop-blur-md border-b border-white/10">
+        <div className="fixed top-0 left-0 right-0 z-[60] bg-black/80 backdrop-blur-md border-b border-white/10">
           {nav}
         </div>
       )}
@@ -64,7 +64,7 @@ export default function Navbar({ animate = false }: { animate?: boolean }) {
       <AnimatePresence>
         {open && (
           <motion.div
-            className="fixed inset-0 z-50 bg-[#0b0b0b] flex flex-col pt-[84px] px-5 pb-10"
+            className="fixed inset-0 z-50 bg-black flex flex-col pt-[84px] px-5 pb-10"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}

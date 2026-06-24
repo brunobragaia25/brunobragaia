@@ -23,18 +23,27 @@ export default function HeroSection() {
         className="absolute bottom-0 left-0 right-0 overflow-hidden pointer-events-none select-none"
         style={{ zIndex: 1 }}
       >
-        <motion.p
-          className="text-[#a8a8a8] opacity-10 whitespace-nowrap leading-none"
+        <div
+          className="flex"
           style={{
-            fontFamily: "'Clash Grotesk', sans-serif",
-            fontWeight: 400,
-            fontSize: "clamp(120px, 15.6vw, 300px)",
+            animation: "marquee 18s linear infinite",
+            willChange: "transform",
           }}
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{ duration: 18, ease: "linear", repeat: Infinity }}
         >
-          brunobragaia&nbsp;&nbsp;•&nbsp;&nbsp;brunobragaia&nbsp;&nbsp;•&nbsp;&nbsp;
-        </motion.p>
+          {[0, 1].map((i) => (
+            <span
+              key={i}
+              className="text-[#a8a8a8] opacity-10 whitespace-nowrap leading-none shrink-0"
+              style={{
+                fontFamily: "'Clash Grotesk', sans-serif",
+                fontWeight: 400,
+                fontSize: "clamp(120px, 15.6vw, 300px)",
+              }}
+            >
+              brunobragaia&nbsp;&nbsp;•&nbsp;&nbsp;brunobragaia&nbsp;&nbsp;•&nbsp;&nbsp;
+            </span>
+          ))}
+        </div>
       </div>
 
       {/* Portrait image desktop — absolute */}

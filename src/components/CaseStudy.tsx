@@ -46,7 +46,7 @@ export default function CaseStudy({
   next,
 }: Props) {
   return (
-    <main className="bg-[#0b0b0b] text-white min-h-screen">
+    <main className="bg-black text-white min-h-screen">
       <Navbar />
 
       {/* Hero */}

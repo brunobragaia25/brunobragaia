@@ -60,7 +60,7 @@ export default function ProcessoSection() {
   const [entregasOpen, setEntregasOpen] = useState(false);
 
   return (
-    <section id="processo" className="bg-[#0b0b0b] px-5 pb-32">
+    <section id="processo" className="bg-black px-5 pb-32">
       <div className="max-w-[1280px] mx-auto">
 
         {/* Header */}

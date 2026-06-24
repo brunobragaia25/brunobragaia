@@ -23,7 +23,7 @@ export default function AllWorksGrid({
   const filtered = active === "Todos" ? projects : projects.filter((p) => p.category === active);
 
   return (
-    <main className="bg-[#0b0b0b] text-white min-h-screen">
+    <main className="bg-black text-white min-h-screen">
       <Navbar />
 
       <section className="pt-40 pb-32">
