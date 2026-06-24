@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { track } from "@vercel/analytics";
 import Navbar from "./Navbar";
 
 const easing: [number, number, number, number] = [0.25, 0.1, 0.25, 1];
@@ -120,6 +121,7 @@ export default function HeroSection() {
             href="/orcamento"
             className="group overflow-hidden bg-[#bf0603] text-white text-[13px] tracking-[2px] uppercase px-8 h-12 flex items-center justify-center rounded-full hover:bg-white hover:text-[#0b0b0b] transition-colors duration-300 w-full md:w-auto"
             style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 600 }}
+            onClick={() => track("click_vamos_conversar", { source: "hero" })}
           >
             <span className="relative inline-block overflow-hidden" style={{ lineHeight: "1em", height: "1em" }}>
               <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-[100%]">Vamos conversar</span>

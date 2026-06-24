@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { track } from "@vercel/analytics";
 import { FiInstagram } from "react-icons/fi";
 import { SiBehance } from "react-icons/si";
 
@@ -33,6 +34,7 @@ export default function Footer() {
             {/* CTA */}
             <motion.a
               href="/orcamento"
+              onClick={() => track("click_vamos_conversar", { source: "footer" })}
               className="group overflow-hidden inline-flex items-center justify-center bg-[#bf0603] text-white rounded-full px-8 h-12 text-[13px] uppercase tracking-[2px] hover:bg-white hover:text-[#0b0b0b] transition-colors duration-300"
               style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 600 }}
               initial={{ opacity: 0 }}

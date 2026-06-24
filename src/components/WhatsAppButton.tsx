@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { track } from "@vercel/analytics";
 
 export default function WhatsAppButton() {
   const [hovered, setHovered] = useState(false);
@@ -52,6 +53,7 @@ export default function WhatsAppButton() {
               rel="noopener noreferrer"
               className="mt-3 w-full bg-[#25D366] text-white text-[12px] tracking-[1px] uppercase rounded-full h-9 flex items-center justify-center hover:opacity-90 transition-opacity"
               style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 600 }}
+              onClick={() => track("click_whatsapp", { source: "bubble" })}
             >
               Iniciar conversa
             </a>
@@ -61,7 +63,7 @@ export default function WhatsAppButton() {
 
       {/* Botão */}
       <button
-        onClick={() => window.open("https://wa.me/5511992656555?text=Olá%20Bruno%2C%20gostaria%20de%20solicitar%20um%20orçamento!", "_blank")}
+        onClick={() => { track("click_whatsapp", { source: "button" }); window.open("https://wa.me/5511992656555?text=Olá%20Bruno%2C%20gostaria%20de%20solicitar%20um%20orçamento!", "_blank"); }}
         className="w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-200"
         aria-label="WhatsApp"
       >

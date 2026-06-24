@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
+import { track } from "@vercel/analytics";
 
 export default function Navbar({ animate = false }: { animate?: boolean }) {
   const [open, setOpen] = useState(false);
@@ -32,7 +33,7 @@ export default function Navbar({ animate = false }: { animate?: boolean }) {
       </div>
 
       {/* Desktop CTA */}
-      <Link href="/orcamento" className="hidden md:flex bg-[#bf0603] text-white text-[13px] tracking-[2px] uppercase px-8 h-12 items-center justify-center rounded-full hover:bg-white hover:text-[#0b0b0b] transition-colors duration-300 group overflow-hidden" style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 600 }}>
+      <Link href="/orcamento" onClick={() => track("click_vamos_conversar", { source: "navbar" })} className="hidden md:flex bg-[#bf0603] text-white text-[13px] tracking-[2px] uppercase px-8 h-12 items-center justify-center rounded-full hover:bg-white hover:text-[#0b0b0b] transition-colors duration-300 group overflow-hidden" style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 600 }}>
         <span className="relative inline-block overflow-hidden" style={{ lineHeight: "1em", height: "1em" }}>
           <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-[100%]">Vamos conversar</span>
           <span className="block absolute inset-x-0 top-[100%] transition-transform duration-300 ease-out group-hover:-translate-y-[100%]">Vamos conversar</span>
@@ -88,7 +89,7 @@ export default function Navbar({ animate = false }: { animate?: boolean }) {
             <div className="mt-auto">
               <Link
                 href="/orcamento"
-                onClick={() => setOpen(false)}
+                onClick={() => { setOpen(false); track("click_vamos_conversar", { source: "navbar_mobile" }); }}
                 className="flex items-center justify-center bg-[#bf0603] text-white text-[14px] h-12 rounded-full w-full"
                 style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 500 }}
               >

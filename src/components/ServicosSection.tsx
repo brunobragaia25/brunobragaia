@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { track } from "@vercel/analytics";
 
 const easing: [number, number, number, number] = [0.25, 0.1, 0.25, 1];
 
@@ -123,6 +124,7 @@ export default function ServicosSection() {
           </span>
           <Link
             href="/orcamento"
+            onClick={() => track("click_vamos_conversar", { source: "servicos" })}
             className="group overflow-hidden flex items-center justify-center bg-[#bf0603] text-white text-[13px] tracking-[2px] uppercase px-8 h-12 rounded-full hover:bg-white hover:text-[#0b0b0b] transition-colors duration-300 w-full md:w-auto"
             style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 600 }}
           >

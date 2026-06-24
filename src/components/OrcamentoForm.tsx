@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { track } from "@vercel/analytics";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
@@ -48,6 +49,7 @@ export default function OrcamentoForm() {
 
       if (res.ok) {
         setStatus("success");
+        track("form_submit_orcamento", { budget: form.budget, projectType: form.projectTypes.join(", ") });
         setForm({ name: "", email: "", phone: "", projectTypes: [], budget: "", message: "" });
       } else {
         setStatus("error");
