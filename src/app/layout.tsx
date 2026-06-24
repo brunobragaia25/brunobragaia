@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import BackToTop from "@/components/BackToTop";
 
 export const metadata: Metadata = {
   title: {
@@ -69,6 +70,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-full bg-[#0b0b0b] text-white antialiased">
         {children}
+        <BackToTop />
         <WhatsAppButton />
       </body>
     </html>

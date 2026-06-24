@@ -1,10 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
-
 const easing: [number, number, number, number] = [0.25, 0.1, 0.25, 1];
 
 interface GalleryItem {
