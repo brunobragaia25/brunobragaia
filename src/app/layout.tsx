@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import BackToTop from "@/components/BackToTop";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: {
@@ -72,6 +73,7 @@ export default function RootLayout({
         {children}
         <BackToTop />
         <WhatsAppButton />
+        <Analytics />
       </body>
     </html>
   );
