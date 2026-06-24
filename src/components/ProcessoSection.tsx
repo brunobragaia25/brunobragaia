@@ -223,7 +223,7 @@ export default function ProcessoSection() {
         </div>
 
         {/* CTA */}
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pt-10 border-t border-white/10">
+        <div className="flex flex-col md:flex-row items-center md:items-center justify-between gap-4 pt-10 border-t border-white/10">
           <span
             className="text-[#a8a8a8] text-[12px] tracking-[2.4px] uppercase"
             style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 500 }}
@@ -232,7 +232,7 @@ export default function ProcessoSection() {
           </span>
           <Link
             href="/orcamento"
-            className="group overflow-hidden flex items-center bg-[#bf0603] text-white text-[13px] tracking-[2px] uppercase px-8 h-12 rounded-full hover:bg-white hover:text-[#0b0b0b] transition-colors duration-300"
+            className="group overflow-hidden flex items-center justify-center bg-[#bf0603] text-white text-[13px] tracking-[2px] uppercase px-8 h-12 rounded-full hover:bg-white hover:text-[#0b0b0b] transition-colors duration-300 w-full md:w-auto"
             style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 600 }}
           >
             <span className="relative inline-block overflow-hidden" style={{ lineHeight: "1em", height: "1em" }}>

@@ -109,7 +109,7 @@ export default function ServicosSection() {
 
         {/* CTA */}
         <motion.div
-          className="flex items-center justify-between"
+          className="flex flex-col md:flex-row items-center md:items-center justify-between gap-4"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -123,7 +123,7 @@ export default function ServicosSection() {
           </span>
           <Link
             href="/orcamento"
-            className="group overflow-hidden flex items-center bg-[#bf0603] text-white text-[13px] tracking-[2px] uppercase px-8 h-12 rounded-full hover:bg-white hover:text-[#0b0b0b] transition-colors duration-300"
+            className="group overflow-hidden flex items-center justify-center bg-[#bf0603] text-white text-[13px] tracking-[2px] uppercase px-8 h-12 rounded-full hover:bg-white hover:text-[#0b0b0b] transition-colors duration-300 w-full md:w-auto"
             style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 600 }}
           >
             <span className="relative inline-block overflow-hidden" style={{ lineHeight: "1em", height: "1em" }}>

@@ -110,7 +110,7 @@ export default function HeroSection() {
 
         {/* Buttons */}
         <motion.div
-          className="flex items-center gap-3"
+          className="flex flex-col md:flex-row items-start md:items-center gap-3"
           custom={0.85}
           variants={fadeUp}
           initial="hidden"
@@ -118,7 +118,7 @@ export default function HeroSection() {
         >
           <a
             href="#orcamento"
-            className="group overflow-hidden bg-[#bf0603] text-white text-[13px] tracking-[2px] uppercase px-8 h-12 flex items-center justify-center rounded-full hover:bg-white hover:text-[#0b0b0b] transition-colors duration-300"
+            className="group overflow-hidden bg-[#bf0603] text-white text-[13px] tracking-[2px] uppercase px-8 h-12 flex items-center justify-center rounded-full hover:bg-white hover:text-[#0b0b0b] transition-colors duration-300 w-full md:w-auto"
             style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 600 }}
           >
             <span className="relative inline-block overflow-hidden" style={{ lineHeight: "1em", height: "1em" }}>
@@ -128,7 +128,7 @@ export default function HeroSection() {
           </a>
           <a
             href="#trabalhos"
-            className="group overflow-hidden border border-white text-white text-[13px] tracking-[2px] uppercase px-8 h-12 flex items-center justify-center rounded-full transition-colors duration-300"
+            className="group overflow-hidden border border-white text-white text-[13px] tracking-[2px] uppercase px-8 h-12 flex items-center justify-center rounded-full transition-colors duration-300 w-full md:w-auto"
             style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 600 }}
           >
             <span className="relative inline-block overflow-hidden" style={{ lineHeight: "1em", height: "1em" }}>
