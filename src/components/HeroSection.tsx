@@ -117,7 +117,7 @@ export default function HeroSection() {
           animate="visible"
         >
           <a
-            href="#orcamento"
+            href="/orcamento"
             className="group overflow-hidden bg-[#bf0603] text-white text-[13px] tracking-[2px] uppercase px-8 h-12 flex items-center justify-center rounded-full hover:bg-white hover:text-[#0b0b0b] transition-colors duration-300 w-full md:w-auto"
             style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 600 }}
           >
