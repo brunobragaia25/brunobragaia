@@ -110,7 +110,7 @@ export default function WorksGrid({
         </motion.div>
 
         <motion.a
-          href="#"
+          href="/trabalhos"
           className="border border-white text-white text-[14px] px-5 h-11 flex items-center justify-center rounded-full hover:bg-white hover:text-[#0b0b0b] transition-colors mb-2"
           style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 500 }}
           initial={{ opacity: 0 }}
