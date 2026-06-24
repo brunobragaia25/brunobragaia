@@ -70,7 +70,7 @@ export default function MarcasSection() {
                     width={120}
                     height={60}
                     className="object-contain opacity-60 hover:opacity-100 transition-opacity duration-300"
-                    style={{ maxHeight: "48px", width: "auto" }}
+                    style={{ maxHeight: "88px", width: "auto" }}
                   />
                 </div>
               ))}

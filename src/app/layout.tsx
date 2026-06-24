@@ -10,6 +10,11 @@ export const metadata: Metadata = {
   description:
     "Estúdio especializado em identidade visual e branding. Criamos marcas que ficam na memória — com posicionamento, propósito e design que fazem sentido de verdade.",
   metadataBase: new URL("https://brunobragaia.vercel.app"),
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
+  },
   openGraph: {
     type: "website",
     locale: "pt_BR",
