@@ -139,7 +139,9 @@ export default function Footer() {
             >
               Desenvolvido por
             </span>
-            <img src="/logodevz.svg" alt="DevzDesign" className="h-4 opacity-40" />
+            <a href="https://www.devzdesign.com.br" target="_blank" rel="noopener noreferrer">
+              <img src="/logodevz.svg" alt="DevzDesign" className="h-4 opacity-40 hover:opacity-100 transition-opacity duration-300" />
+            </a>
           </div>
         </div>
       </div>
