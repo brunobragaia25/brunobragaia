@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
-import { projectBySlugQuery, adjacentProjectsQuery, allSlugsQuery } from "@/sanity/lib/queries";
+import { projectBySlugQuery, adjacentProjectsQuery, allSlugsQuery, otherProjectsQuery } from "@/sanity/lib/queries";
 import CaseStudy from "@/components/CaseStudy";
 
 interface Params {
@@ -22,6 +22,9 @@ export default async function WorkPage({ params }: Params) {
   const adjacent = await client.fetch(adjacentProjectsQuery, {
     order: project.order ?? 0,
   });
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const otherProjectsRaw: any[] = await client.fetch(otherProjectsQuery, { slug });
 
   const coverUrl = project.coverImage
     ? urlFor(project.coverImage).width(2400).url()
@@ -54,6 +57,18 @@ export default async function WorkPage({ params }: Params) {
       }
     : null;
 
+  const otherProjects = [...otherProjectsRaw]
+    .sort(() => Math.random() - 0.5)
+    .slice(0, 4)
+    .map((p) => ({
+      id: p._id,
+      title: p.title,
+      slug: p.slug.current,
+      category: p.category,
+      year: p.year,
+      image: p.coverImage ? urlFor(p.coverImage).width(800).url() : "",
+    }));
+
   return (
     <CaseStudy
       title={project.title}
@@ -67,6 +82,7 @@ export default async function WorkPage({ params }: Params) {
       gallery={galleryItems}
       prev={prevData}
       next={nextData}
+      otherProjects={otherProjects}
     />
   );
 }

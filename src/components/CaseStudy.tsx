@@ -18,6 +18,15 @@ interface AdjacentProject {
   image: string;
 }
 
+interface OtherProject {
+  id: string;
+  title: string;
+  slug: string;
+  category: string;
+  year: string;
+  image: string;
+}
+
 interface Props {
   title: string;
   category: string;
@@ -30,6 +39,7 @@ interface Props {
   gallery: GalleryItem[];
   prev: AdjacentProject | null;
   next: AdjacentProject | null;
+  otherProjects: OtherProject[];
 }
 
 export default function CaseStudy({
@@ -44,6 +54,7 @@ export default function CaseStudy({
   gallery,
   prev,
   next,
+  otherProjects,
 }: Props) {
   return (
     <main className="bg-black text-white min-h-screen">
@@ -313,6 +324,68 @@ export default function CaseStudy({
           <div />
         )}
       </section>
+      {/* Outros projetos */}
+      {otherProjects.length > 0 && (
+        <section className="px-5 py-24 bg-black">
+          <div className="max-w-[1280px] mx-auto">
+            <div className="flex items-end justify-between mb-12">
+              <h2
+                className="text-white text-[36px] leading-tight"
+                style={{ fontFamily: "'PP Neue Montreal', sans-serif", fontWeight: 400 }}
+              >
+                Outros projetos
+              </h2>
+              <Link
+                href="/trabalhos"
+                className="group overflow-hidden border border-white/20 text-white text-[12px] tracking-[2px] uppercase px-6 h-10 flex items-center justify-center rounded-full hover:border-white transition-colors duration-300"
+                style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 500 }}
+              >
+                <span className="relative inline-block overflow-hidden" style={{ lineHeight: "1em", height: "1em" }}>
+                  <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-[100%]">Ver todos</span>
+                  <span className="block absolute inset-x-0 top-[100%] transition-transform duration-300 ease-out group-hover:-translate-y-[100%]">Ver todos</span>
+                </span>
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {otherProjects.map((p, i) => (
+                <motion.div
+                  key={p.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-60px" }}
+                  transition={{ duration: 0.6, ease: easing, delay: i * 0.08 }}
+                >
+                  <Link href={`/trabalhos/${p.slug}`} className="group block">
+                    <div className="relative w-full aspect-[4/3] overflow-hidden bg-[#1a1a1a] mb-4">
+                      {p.image && (
+                        <img
+                          src={p.image}
+                          alt={p.title}
+                          className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                        />
+                      )}
+                      <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-30 transition-opacity duration-500" />
+                    </div>
+                    <span
+                      className="text-[#a8a8a8] text-[11px] tracking-[2px] uppercase block mb-1"
+                      style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 500 }}
+                    >
+                      {p.category}
+                    </span>
+                    <h3
+                      className="text-white text-[18px] leading-snug"
+                      style={{ fontFamily: "'PP Neue Montreal', sans-serif", fontWeight: 400 }}
+                    >
+                      {p.title}
+                    </h3>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       <Footer />
     </main>
   );

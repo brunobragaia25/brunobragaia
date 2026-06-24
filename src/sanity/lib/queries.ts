@@ -44,3 +44,14 @@ export const adjacentProjectsQuery = groq`
 export const allSlugsQuery = groq`
   *[_type == "project"] { "slug": slug.current }
 `;
+
+export const otherProjectsQuery = groq`
+  *[_type == "project" && slug.current != $slug] {
+    _id,
+    title,
+    slug,
+    category,
+    year,
+    coverImage,
+  }
+`;
