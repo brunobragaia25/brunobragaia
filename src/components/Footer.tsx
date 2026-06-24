@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { FiInstagram } from "react-icons/fi";
-import { SiBehance, SiDribbble } from "react-icons/si";
+import { SiBehance } from "react-icons/si";
 
 const easing: [number, number, number, number] = [0.25, 0.1, 0.25, 1];
 
@@ -58,9 +58,8 @@ export default function Footer() {
               </p>
               <ul className="space-y-4">
                 {[
-                  { label: "Instagram", href: "https://instagram.com", icon: <FiInstagram size={18} /> },
-                  { label: "Behance", href: "https://behance.net", icon: <SiBehance size={18} /> },
-                  { label: "Dribbble", href: "https://dribbble.com", icon: <SiDribbble size={18} /> },
+                  { label: "Instagram", href: "https://instagram.com/brunobragaiadesign", icon: <FiInstagram size={18} /> },
+                  { label: "Behance", href: "https://behance.net/brunobragaiadesign", icon: <SiBehance size={18} /> },
                 ].map((link) => (
                   <li key={link.label}>
                     <a
