@@ -94,7 +94,7 @@ export default function WorksGrid({
   return (
     <section id="trabalhos" className="bg-[#0b0b0b] pt-32 pb-16 px-5">
       {/* Header */}
-      <div className="max-w-[1280px] mx-auto mb-16 flex items-end justify-between">
+      <div className="max-w-[1280px] mx-auto mb-16 flex flex-col md:flex-row items-start md:items-end justify-between gap-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -134,7 +134,7 @@ export default function WorksGrid({
 
       {/* Featured — 2 colunas full width */}
       {featured.length > 0 && (
-        <div className="grid grid-cols-2 gap-6 mb-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
           {featured.map((p, i) => (
             <FeaturedCard key={p._id} project={p} image={imageMap[p._id] ?? ""} index={i} />
           ))}
@@ -143,7 +143,7 @@ export default function WorksGrid({
 
       {/* Grid — 3 colunas full width */}
       {grid.length > 0 && (
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {grid.map((p, i) => (
             <GridCard key={p._id} project={p} image={imageMap[p._id] ?? ""} index={i} />
           ))}

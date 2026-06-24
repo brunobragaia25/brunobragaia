@@ -36,48 +36,32 @@ const logos = [
   { src: "/logos/logo-zimbel.png", alt: "Zimbel" },
 ];
 
-const COLS = 7;
-const rows: { src: string; alt: string }[][] = [];
-for (let i = 0; i < logos.length; i += COLS) {
-  rows.push(logos.slice(i, i + COLS));
-}
-
 export default function MarcasSection() {
   return (
     <section className="bg-[#0b0b0b]">
-        {/* Grid — full width */}
-        <motion.div
-          className="border-t border-white/10"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: easing }}
-        >
-          {rows.map((row, rowIndex) => (
-            <div
-              key={rowIndex}
-              className={`grid ${rowIndex < rows.length - 1 ? "border-b border-white/10" : ""}`}
-              style={{ gridTemplateColumns: `repeat(${COLS}, 1fr)` }}
-            >
-              {row.map((logo, colIndex) => (
-                <div
-                  key={colIndex}
-                  className={`flex items-center justify-center py-20 px-6 ${colIndex < row.length - 1 ? "border-r border-white/10" : ""}`}
-                >
-                  <Image
-                    src={logo.src}
-                    alt={logo.alt}
-                    width={120}
-                    height={60}
-                    className="object-contain opacity-60 hover:opacity-100 transition-opacity duration-300"
-                    style={{ maxHeight: "88px", width: "auto" }}
-                  />
-                </div>
-              ))}
-            </div>
-          ))}
-        </motion.div>
-
+      <motion.div
+        className="border-t border-white/10 grid grid-cols-2 md:grid-cols-7"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: easing }}
+      >
+        {logos.map((logo, i) => (
+          <div
+            key={i}
+            className="flex items-center justify-center py-12 md:py-20 px-4 border-b border-r border-white/10"
+          >
+            <Image
+              src={logo.src}
+              alt={logo.alt}
+              width={120}
+              height={60}
+              className="object-contain opacity-60 hover:opacity-100 transition-opacity duration-300"
+              style={{ maxHeight: "88px", width: "auto" }}
+            />
+          </div>
+        ))}
+      </motion.div>
     </section>
   );
 }

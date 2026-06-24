@@ -17,7 +17,7 @@ const fadeUp = {
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen bg-[#0b0b0b] overflow-hidden">
+    <section className="relative bg-[#0b0b0b] overflow-hidden">
       {/* Watermark — atrás de tudo */}
       <div
         className="absolute bottom-0 left-0 right-0 overflow-hidden pointer-events-none select-none"
@@ -37,9 +37,9 @@ export default function HeroSection() {
         </motion.p>
       </div>
 
-      {/* Portrait image — fade in from right */}
+      {/* Portrait image desktop — absolute */}
       <motion.div
-        className="absolute top-0 right-0 w-full h-full pointer-events-none overflow-hidden"
+        className="absolute top-0 right-0 w-full h-full pointer-events-none overflow-hidden hidden md:block"
         style={{ zIndex: 2 }}
         initial={{ opacity: 0, x: 60 }}
         animate={{ opacity: 0.8, x: 0 }}
@@ -65,12 +65,12 @@ export default function HeroSection() {
       </div>
 
       {/* Hero content */}
-      <div className="relative mx-auto max-w-[1280px] px-5 flex flex-col gap-14 py-32" style={{ zIndex: 10 }}>
+      <div className="relative mx-auto max-w-[1280px] px-5 flex flex-col gap-10 md:gap-14 pt-16 pb-24 md:py-32 min-h-[calc(100vh-84px)]" style={{ zIndex: 10 }}>
 
         {/* Heading */}
         <div className="flex flex-col gap-5 max-w-[804px]">
           <h1
-            className="text-[80px] leading-[0.9] text-white flex flex-col"
+            className="text-[clamp(44px,8vw,80px)] leading-[0.9] text-white flex flex-col"
             style={{ fontFamily: "'PP Neue Montreal', sans-serif", fontWeight: 400 }}
           >
             {["Transformamos marcas", "em experiências", "memoráveis."].map((line, i) => (
@@ -88,7 +88,7 @@ export default function HeroSection() {
           </h1>
 
           <motion.p
-            className="text-white text-[28px] leading-[1.2] max-w-[506px]"
+            className="text-white text-[clamp(18px,2.5vw,28px)] leading-[1.2] max-w-[506px]"
             style={{ fontFamily: "'PP Neue Montreal', sans-serif", fontWeight: 400 }}
             custom={0.65}
             variants={fadeUp}
@@ -122,6 +122,24 @@ export default function HeroSection() {
             Meus trabalhos
           </a>
         </motion.div>
+
+        {/* Portrait mobile — abaixo dos botões */}
+        <motion.div
+          className="block md:hidden w-full relative"
+          style={{ height: "60vw" }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: easing, delay: 0.5 }}
+        >
+          <Image
+            src="/hero-portrait.png"
+            alt="Bruno Bragaia"
+            fill
+            priority
+            className="object-contain object-bottom"
+          />
+        </motion.div>
+
       </div>
     </section>
   );

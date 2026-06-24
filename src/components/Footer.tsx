@@ -12,12 +12,12 @@ export default function Footer() {
     <footer className="bg-[#0b0b0b] border-t border-white/10 pt-16 pb-0 overflow-hidden">
       <div className="px-5 max-w-[1280px] mx-auto">
         {/* Top row */}
-        <div className="flex items-start justify-between mb-20">
+        <div className="flex flex-col md:flex-row items-start justify-between gap-16 mb-20">
           {/* Left: pill + tagline + CTA */}
           <div className="max-w-[560px]">
             {/* Tagline */}
             <motion.h2
-              className="text-white text-[36px] leading-[1.15] mb-10"
+              className="text-white text-[clamp(24px,3vw,36px)] leading-[1.15] mb-10"
               style={{ fontFamily: "'PP Neue Montreal', sans-serif", fontWeight: 400 }}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -126,7 +126,7 @@ export default function Footer() {
       </div>
 
       {/* Copyright + Dev credit */}
-      <div className="px-5 max-w-[1280px] mx-auto flex items-center justify-between pt-6 pb-6 mt-4 border-t border-white/10">
+      <div className="px-5 max-w-[1280px] mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pt-6 pb-6 mt-4 border-t border-white/10">
         <p
           className="text-white/30 text-[11px] tracking-[1px] uppercase"
           style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 400 }}

@@ -68,7 +68,7 @@ export default function OrcamentoForm() {
         <div className="max-w-[1280px] mx-auto">
           {/* Header */}
           <motion.div
-            className="mb-16 flex items-stretch justify-between gap-12"
+            className="mb-16 flex flex-col md:flex-row items-stretch justify-between gap-12"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: easing }}
@@ -82,7 +82,7 @@ export default function OrcamentoForm() {
                 Orçamento
               </span>
               <h1
-                className="text-white text-[56px] leading-[0.92] mb-6"
+                className="text-white text-[clamp(36px,5vw,56px)] leading-[0.92] mb-6"
                 style={{ fontFamily: "'PP Neue Montreal', sans-serif", fontWeight: 400 }}
               >
                 Vamos criar<br />algo juntos?
@@ -96,7 +96,7 @@ export default function OrcamentoForm() {
             </div>
 
             {/* Right: WhatsApp card */}
-            <div className="shrink-0 border border-white/10 rounded-2xl p-6 w-[320px] flex flex-col justify-between">
+            <div className="shrink-0 border border-white/10 rounded-2xl p-6 w-full md:w-[320px] flex flex-col justify-between">
               <p
                 className="text-white text-[16px] mb-1"
                 style={{ fontFamily: "'PP Neue Montreal', sans-serif", fontWeight: 400 }}
@@ -155,7 +155,7 @@ export default function OrcamentoForm() {
               transition={{ duration: 0.7, delay: 0.2, ease: easing }}
             >
               {/* Row 1 */}
-              <div className="grid grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
                   <label className={labelClass} style={{ fontFamily: "'Clash Grotesk', sans-serif" }}>Nome *</label>
                   <input
@@ -183,7 +183,7 @@ export default function OrcamentoForm() {
               </div>
 
               {/* Row 2 */}
-              <div className="grid grid-cols-2 gap-8 items-end">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-end">
                 <div>
                   <label className={labelClass} style={{ fontFamily: "'Clash Grotesk', sans-serif" }}>Telefone</label>
                   <input

@@ -29,7 +29,7 @@ export default function QuemSou() {
         <div className="relative z-10 max-w-[1280px] mx-auto">
 
           {/* Top: nome + texto */}
-          <div className="grid grid-cols-2 gap-20 items-end pb-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-end pb-20">
             <div />
 
             {/* Right: conteúdo */}

@@ -213,7 +213,7 @@ export default function CaseStudy({
 
           {/* Non-full-width items in 2-col grid */}
           {gallery.filter((img) => !img.fullWidth).length > 0 && (
-            <div className="grid grid-cols-2 gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               {gallery
                 .filter((img) => !img.fullWidth)
                 .map((img, i) => (
@@ -247,7 +247,7 @@ export default function CaseStudy({
       </div>
 
       {/* Next / Prev navigation */}
-      <section className="grid grid-cols-2">
+      <section className="grid grid-cols-1 md:grid-cols-2">
         {prev ? (
           <Link
             href={`/trabalhos/${prev.slug}`}
