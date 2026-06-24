@@ -1,5 +1,13 @@
 export const revalidate = 60;
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Trabalhos",
+  description:
+    "Portfólio de projetos de identidade visual e branding criados pelo estúdio Bruno Bragaia Design.",
+};
+
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 import { projectsQuery } from "@/sanity/lib/queries";
