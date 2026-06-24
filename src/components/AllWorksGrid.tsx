@@ -9,7 +9,7 @@ import Footer from "./Footer";
 
 const easing: [number, number, number, number] = [0.25, 0.1, 0.25, 1];
 
-const categories = ["Todos", "Branding", "UI/UX", "Motion", "Print", "Web"];
+const categories = ["Todos", "Branding", "UI/UX", "Web"];
 
 export default function AllWorksGrid({
   projects,

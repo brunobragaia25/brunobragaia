@@ -7,7 +7,8 @@ import Footer from "./Footer";
 
 const easing: [number, number, number, number] = [0.25, 0.1, 0.25, 1];
 
-const projectTypes = ["Branding", "UI/UX Design", "Motion Design", "Web Design", "Print", "Outro"];
+const projectTypes = ["Branding", "UI/UX Design", "Web Design", "Outro"];
+
 const budgets = ["Até R$ 3.000", "R$ 3.000 – R$ 8.000", "R$ 8.000 – R$ 20.000", "Acima de R$ 20.000", "A definir"];
 
 type Status = "idle" | "loading" | "success" | "error";
@@ -17,13 +18,22 @@ export default function OrcamentoForm() {
     name: "",
     email: "",
     phone: "",
-    projectType: "",
+    projectTypes: [] as string[],
     budget: "",
     message: "",
   });
   const [status, setStatus] = useState<Status>("idle");
 
   const set = (field: string, value: string) => setForm((p) => ({ ...p, [field]: value }));
+
+  const toggleProjectType = (type: string) => {
+    setForm((p) => ({
+      ...p,
+      projectTypes: p.projectTypes.includes(type)
+        ? p.projectTypes.filter((t) => t !== type)
+        : [...p.projectTypes, type],
+    }));
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -33,12 +43,12 @@ export default function OrcamentoForm() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, projectType: form.projectTypes.join(", ") }),
       });
 
       if (res.ok) {
         setStatus("success");
-        setForm({ name: "", email: "", phone: "", projectType: "", budget: "", message: "" });
+        setForm({ name: "", email: "", phone: "", projectTypes: [], budget: "", message: "" });
       } else {
         setStatus("error");
       }
@@ -100,7 +110,7 @@ export default function OrcamentoForm() {
                 Respondo mais rápido por lá.
               </p>
               <a
-                href="https://wa.me/5500000000000?text=Olá%20Bruno%2C%20gostaria%20de%20solicitar%20um%20orçamento!"
+                href="https://wa.me/5511992656555?text=Olá%20Bruno%2C%20gostaria%20de%20solicitar%20um%20orçamento!"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 bg-[#25D366] text-white text-[13px] tracking-[1px] uppercase px-6 h-11 rounded-full hover:opacity-90 transition-opacity w-full"
@@ -173,7 +183,7 @@ export default function OrcamentoForm() {
               </div>
 
               {/* Row 2 */}
-              <div className="grid grid-cols-2 gap-8">
+              <div className="grid grid-cols-2 gap-8 items-end">
                 <div>
                   <label className={labelClass} style={{ fontFamily: "'Clash Grotesk', sans-serif" }}>Telefone</label>
                   <input
@@ -185,19 +195,25 @@ export default function OrcamentoForm() {
                     style={{ fontFamily: "'PP Neue Montreal', sans-serif" }}
                   />
                 </div>
-                <div>
+                <div className="flex flex-col justify-between" style={{ minHeight: "80px" }}>
                   <label className={labelClass} style={{ fontFamily: "'Clash Grotesk', sans-serif" }}>Tipo de projeto</label>
-                  <select
-                    value={form.projectType}
-                    onChange={(e) => set("projectType", e.target.value)}
-                    className={`${inputClass} cursor-pointer`}
-                    style={{ fontFamily: "'PP Neue Montreal', sans-serif" }}
-                  >
-                    <option value="" disabled className="bg-[#0b0b0b]">Selecione</option>
+                  <div className="flex flex-wrap gap-2">
                     {projectTypes.map((t) => (
-                      <option key={t} value={t} className="bg-[#0b0b0b]">{t}</option>
+                      <button
+                        key={t}
+                        type="button"
+                        onClick={() => toggleProjectType(t)}
+                        className={`px-5 h-9 rounded-full text-[12px] tracking-[1px] transition-all duration-200 ${
+                          form.projectTypes.includes(t)
+                            ? "bg-white text-[#0b0b0b]"
+                            : "border border-white/20 text-[#a8a8a8] hover:border-white/50 hover:text-white"
+                        }`}
+                        style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 500 }}
+                      >
+                        {t}
+                      </button>
                     ))}
-                  </select>
+                  </div>
                 </div>
               </div>
 

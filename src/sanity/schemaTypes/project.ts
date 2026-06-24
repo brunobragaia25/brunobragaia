@@ -11,7 +11,7 @@ export const projectType = defineType({
       name: "category",
       title: "Categoria",
       type: "string",
-      options: { list: ["Branding", "UI/UX", "Motion", "Print", "Web"] },
+      options: { list: ["Branding", "UI/UX", "Web"] },
       validation: (r) => r.required(),
     }),
     defineField({ name: "year", title: "Ano", type: "string", validation: (r) => r.required() }),
