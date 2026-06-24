@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 @font-face {
   font-family: 'PP Neue Montreal';
   src: url('/fonts/NeueMontreal-Light.otf') format('opentype');

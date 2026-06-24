@@ -85,8 +85,8 @@ export default function Footer() {
               <ul className="space-y-4">
                 {[
                   { label: "Trabalhos", href: "/#trabalhos" },
-                  { label: "Sobre", href: "/#sobre" },
-                  { label: "Contato", href: "mailto:bruninhugood@gmail.com" },
+                  { label: "Sobre", href: "/quem-sou" },
+                  { label: "Contato", href: "https://wa.me/5511992656555" },
                 ].map((link) => (
                   <li key={link.label}>
                     <Link
@@ -104,45 +104,45 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Big name + copyright row */}
-      <div className="px-5 max-w-[1280px] mx-auto flex items-end justify-between overflow-hidden leading-none">
-        {/* Big name */}
+      {/* Big name */}
+      <div className="px-5 overflow-hidden leading-none">
         <motion.p
-          className="text-white select-none"
+          className="text-white select-none w-full text-center"
           style={{
             fontFamily: "'Clash Grotesk', sans-serif",
             fontWeight: 600,
-            fontSize: "clamp(80px, 14vw, 200px)",
+            fontSize: "clamp(40px, 11.5vw, 9999px)",
             lineHeight: 0.85,
             letterSpacing: "-0.02em",
+            whiteSpace: "nowrap",
           }}
           initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.9, ease: easing }}
         >
-          BRUNO<br />BRAGAIA<span className="text-[#bf0603]">.</span>
+          BRUNOBRAGAIA<span className="text-[#bf0603]">.</span>
         </motion.p>
+      </div>
 
-        {/* Copyright + Dev credit */}
-        <div className="flex flex-col items-end gap-3 pb-4 shrink-0 ml-8">
-          <p
+      {/* Copyright + Dev credit */}
+      <div className="px-5 max-w-[1280px] mx-auto flex items-center justify-between pt-6 pb-6 mt-4 border-t border-white/10">
+        <p
+          className="text-white/30 text-[11px] tracking-[1px] uppercase"
+          style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 400 }}
+        >
+          © 2026 Todos os direitos reservados
+        </p>
+        <div className="flex items-center gap-2">
+          <span
             className="text-white/30 text-[11px] tracking-[1px] uppercase"
             style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 400 }}
           >
-            © 2026 Todos os direitos reservados
-          </p>
-          <div className="flex items-center gap-2">
-            <span
-              className="text-white/30 text-[11px] tracking-[1px] uppercase"
-              style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 400 }}
-            >
-              Desenvolvido por
-            </span>
-            <a href="https://www.devzdesign.com.br" target="_blank" rel="noopener noreferrer">
-              <img src="/logodevz.svg" alt="DevzDesign" className="h-4 opacity-40 hover:opacity-100 transition-opacity duration-300" />
-            </a>
-          </div>
+            Desenvolvido por
+          </span>
+          <a href="https://www.devzdesign.com.br" target="_blank" rel="noopener noreferrer">
+            <img src="/logodevz.svg" alt="DevzDesign" className="h-4 opacity-40 hover:opacity-100 transition-opacity duration-300" />
+          </a>
         </div>
       </div>
     </footer>
