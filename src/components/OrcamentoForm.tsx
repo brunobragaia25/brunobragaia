@@ -106,7 +106,7 @@ export default function OrcamentoForm() {
                 className="text-[#a8a8a8] text-[13px] mb-5"
                 style={{ fontFamily: "'PP Neue Montreal', sans-serif" }}
               >
-                Respondo mais rápido por lá.
+                {o.whatsappSub}
               </p>
               <a
                 href="https://wa.me/5511992656555?text=Olá%20Bruno%2C%20gostaria%20de%20solicitar%20um%20orçamento!"
