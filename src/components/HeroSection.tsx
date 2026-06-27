@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { track } from "@vercel/analytics";
 import Navbar from "./Navbar";
+import { useDict, useLang } from "@/context/DictContext";
 
 const easing: [number, number, number, number] = [0.25, 0.1, 0.25, 1];
 
@@ -17,11 +18,13 @@ const fadeUp = {
 };
 
 export default function HeroSection() {
+  const dict = useDict();
+  const lang = useLang();
   return (
     <section className="relative bg-[#0b0b0b] overflow-hidden">
       {/* Watermark — atrás de tudo */}
       <div
-        className="absolute bottom-0 left-0 right-0 overflow-hidden pointer-events-none select-none"
+        className="absolute bottom-0 left-0 right-0 overflow-hidden pointer-events-none select-none hidden md:block"
         style={{ zIndex: 1 }}
       >
         <div
@@ -75,7 +78,7 @@ export default function HeroSection() {
       </div>
 
       {/* Hero content */}
-      <div className="relative mx-auto max-w-[1280px] px-5 flex flex-col gap-10 md:gap-14 pt-16 pb-24 md:py-32 min-h-[calc(100vh-84px)]" style={{ zIndex: 10 }}>
+      <div className="relative mx-auto max-w-[1280px] px-5 flex flex-col gap-10 md:gap-14 pt-16 pb-0 md:py-32 md:min-h-[calc(100vh-84px)]" style={{ zIndex: 10 }}>
 
         {/* Heading */}
         <div className="flex flex-col gap-5 max-w-[804px]">
@@ -83,7 +86,7 @@ export default function HeroSection() {
             className="text-[clamp(44px,8vw,80px)] leading-[0.9] text-white flex flex-col"
             style={{ fontFamily: "'PP Neue Montreal', sans-serif", fontWeight: 400 }}
           >
-            {["Transformamos marcas", "em experiências", "memoráveis."].map((line, i) => (
+            {dict.hero.heading.map((line, i) => (
               <div key={i} className="overflow-hidden">
                 <motion.span
                   className={`block ${i >= 1 ? "text-[#bf0603]" : ""}`}
@@ -105,7 +108,7 @@ export default function HeroSection() {
             initial="hidden"
             animate="visible"
           >
-            Unimos estratégia, design e cultura para criar marcas que moldam mercados.
+            {dict.hero.subheading}
           </motion.p>
         </div>
 
@@ -118,14 +121,14 @@ export default function HeroSection() {
           animate="visible"
         >
           <a
-            href="/orcamento"
+            href={`/${lang}/orcamento`}
             className="group overflow-hidden bg-[#bf0603] text-white text-[13px] tracking-[2px] uppercase px-8 h-12 flex items-center justify-center rounded-full hover:bg-white hover:text-[#0b0b0b] transition-colors duration-300 w-full md:w-auto"
             style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 600 }}
             onClick={() => track("click_vamos_conversar", { source: "hero" })}
           >
             <span className="relative inline-block overflow-hidden" style={{ lineHeight: "1em", height: "1em" }}>
-              <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-[100%]">Vamos conversar</span>
-              <span className="block absolute inset-x-0 top-[100%] transition-transform duration-300 ease-out group-hover:-translate-y-[100%]">Vamos conversar</span>
+              <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-[100%]">{dict.hero.ctaPrimary}</span>
+              <span className="block absolute inset-x-0 top-[100%] transition-transform duration-300 ease-out group-hover:-translate-y-[100%]">{dict.hero.ctaPrimary}</span>
             </span>
           </a>
           <a
@@ -134,15 +137,15 @@ export default function HeroSection() {
             style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 600 }}
           >
             <span className="relative inline-block overflow-hidden" style={{ lineHeight: "1em", height: "1em" }}>
-              <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-[100%]">Meus trabalhos</span>
-              <span className="block absolute inset-x-0 top-[100%] transition-transform duration-300 ease-out group-hover:-translate-y-[100%]">Meus trabalhos</span>
+              <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-[100%]">{dict.hero.ctaSecondary}</span>
+              <span className="block absolute inset-x-0 top-[100%] transition-transform duration-300 ease-out group-hover:-translate-y-[100%]">{dict.hero.ctaSecondary}</span>
             </span>
           </a>
         </motion.div>
 
         {/* Portrait mobile — abaixo dos botões */}
         <motion.div
-          className="block md:hidden w-full relative"
+          className="block md:hidden w-full relative mt-auto"
           style={{ height: "60vw" }}
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

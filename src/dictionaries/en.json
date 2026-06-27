@@ -1,0 +1,187 @@
+{
+  "navbar": {
+    "trabalhos": "WORKS",
+    "servicos": "SERVICES",
+    "etapas": "PROCESS",
+    "quemSou": "ABOUT",
+    "cta": "Let's talk"
+  },
+  "hero": {
+    "heading": ["We transform brands", "into memorable", "experiences."],
+    "subheading": "We combine strategy, design and culture to create brands that shape markets.",
+    "ctaPrimary": "Let's talk",
+    "ctaSecondary": "My work"
+  },
+  "works": {
+    "eyebrow": "Works",
+    "heading": "Featured projects",
+    "cta": "See all works",
+    "categories": {
+      "all": "All",
+      "branding": "Branding",
+      "uiux": "UI/UX",
+      "web": "Web"
+    }
+  },
+  "servicos": {
+    "eyebrow": "Services",
+    "heading": "Visual",
+    "headingItalic": "Identity.",
+    "intro": "Visual identity is the essence of your brand translated visually. It's not about being beautiful. It's about being recognized at the right moment, for the right reason, in a way only your brand can.",
+    "entregasLabel": "What we deliver",
+    "readyCta": "Ready to start?",
+    "ctaBtn": "Let's talk",
+    "entregas": [
+      {
+        "title": "A brand people remember.",
+        "desc": "Logo, colors, typography and the entire visual universe of your brand designed to create an identity that sticks. You know that brand you remember effortlessly? That's what we build."
+      },
+      {
+        "title": "Consistency that builds trust.",
+        "desc": "Inconsistency is silent, but clients feel it. A brand that shows up the same everywhere communicates something no copy can: credibility."
+      },
+      {
+        "title": "The feeling that your brand has arrived.",
+        "desc": "There's a moment when the client looks at the brand and thinks: this truly represents who we are. That's the feeling we work to deliver."
+      },
+      {
+        "title": "Positioning that occupies a clear space.",
+        "desc": "We discover where your brand has the most strength and build from there. No guesswork, no copying competitors. Only what makes sense for your business and the audience you want to attract."
+      }
+    ]
+  },
+  "processo": {
+    "eyebrow": "How we work",
+    "heading": "Development Stages",
+    "entregasTitle": "Project Deliverables",
+    "readyCta": "Ready to start?",
+    "ctaBtn": "Let's talk",
+    "clientParticipation": "* Direct client participation",
+    "entregas": [
+      "Logo in RGB and CMYK variations in AI, PNG, PDF and SVG formats",
+      "Color palette in RGB, CMYK and Pantone (optional)",
+      "Primary and Complementary Typography",
+      "Supporting graphic elements",
+      "Previously agreed materials",
+      "Full project presentation",
+      "Additional materials"
+    ],
+    "etapas": [
+      {
+        "numero": "01",
+        "nome": "Naming",
+        "desc": "Naming is the strategic starting point for building your brand. A good name goes beyond a simple word: it communicates your business's essence, creates a connection with the audience and stands out in the market.",
+        "steps": [
+          { "title": "Immersion & Research", "desc": "We analyze the company, its audience and differentiators, as well as the market and competition, defining the brand's strategic values and identity." },
+          { "title": "Creation & Development", "desc": "The name will be developed strategically, with availability checks and phonetic analysis to ensure a unique, memorable name suited to the market." },
+          { "title": "Presentation & Refinement", "desc": "A report with 3 to 5 name suggestions will be delivered, each accompanied by a conceptual rationale." },
+          { "title": "Final Delivery", "desc": "The validated final name will be delivered along with registration guidance and domain and social media profile suggestions." }
+        ]
+      },
+      {
+        "numero": "02",
+        "nome": "Strategy",
+        "desc": "Having a well-defined strategy before starting is essential to ensure the correct brand positioning, add value and attract the right audience.",
+        "steps": [
+          { "title": "Briefing", "desc": "At the start of the project, we send a briefing so you can share details about your company, target audience and persona." },
+          { "title": "Research", "desc": "After the briefing, we conduct detailed research on the brand's segment, looking for relevant references." },
+          { "title": "Brand DNA", "desc": "With the briefing complete and research done, we define the brand's personality, aligned with its DNA." },
+          { "title": "Moodboard", "desc": "We begin building the moodboard, selecting visual and graphic references that inspire the project.", "note": "* Direct client participation" },
+          { "title": "Competitors", "desc": "We analyze competitor positioning to identify differentiation opportunities and create a unique strategy." }
+        ]
+      },
+      {
+        "numero": "03",
+        "nome": "Visual Identity & Branding",
+        "desc": "With the strategy defined, we begin creating the brand's Visual Identity — logo, color palette, typography and other graphic components, always aligned with the established strategy.",
+        "steps": [
+          { "title": "Colors", "desc": "We define the Visual Identity color palette, specifying tones in RGB, CMYK and optionally Pantone.", "note": "* Direct client participation" },
+          { "title": "Typography", "desc": "The visual identity is composed of two typefaces: the primary, used in the logo, and the complementary, used in institutional materials." },
+          { "title": "Logo", "desc": "We move on to creating the logo and all its variations: vertical, horizontal and circular versions." },
+          { "title": "Supporting elements", "desc": "Visual elements such as patterns, textures and designs that reinforce and complement the Visual Identity." },
+          { "title": "Applications", "desc": "We use mockups to visualize the brand in real contexts, such as packaging, signage and graphic materials." },
+          { "title": "Presentation", "desc": "We develop the final PDF presentation with a detailed recorded explanation, facilitating project review and approval." }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "tagline": ["Brands that stay in memory", "aren't coincidence.", "They're intentional."],
+    "cta": "Let's talk",
+    "socialLabel": "Social",
+    "navLabel": "Navigation",
+    "navLinks": [
+      { "label": "Works", "href": "/#trabalhos" },
+      { "label": "About", "href": "/about" },
+      { "label": "Contact", "href": "https://wa.me/5511992656555" }
+    ],
+    "copyright": "© 2026 All rights reserved",
+    "devBy": "Developed by"
+  },
+  "quemSou": {
+    "eyebrow": "About me",
+    "title": "BRUNO BRAGAIA,\n30 YEARS OLD.",
+    "p1": "I hold a degree in Advertising and Marketing from Universidade Presbiteriana Mackenzie, with specialization in essential tools for design and visual creation, including Adobe Photoshop, Illustrator and Figma.",
+    "p2": "I also completed the ID Class course for Visual Identities, taught by Marcelo Kimura, which allows me to develop visual identity projects with both technical and creative grounding.",
+    "toolsLabel": "Tools & Skills"
+  },
+  "orcamento": {
+    "eyebrow": "Quote",
+    "heading": "Let's create\nsomething together?",
+    "subheading": "Fill out the form below and I'll get in touch within 24h.",
+    "whatsappLabel": "Prefer WhatsApp?",
+    "whatsappBtn": "Chat on WhatsApp",
+    "labels": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone / WhatsApp",
+      "projectType": "Project Type",
+      "budget": "Investment Range",
+      "message": "Tell me about the project"
+    },
+    "placeholders": {
+      "name": "Your full name",
+      "email": "your@email.com",
+      "phone": "+1 (555) 000-0000",
+      "message": "What do you need? The more details, the better."
+    },
+    "projectTypes": ["Branding", "UI/UX Design", "Web Design", "Other"],
+    "budgets": ["Up to $600", "$600 – $1,600", "$1,600 – $4,000", "Above $4,000", "To be defined"],
+    "submitBtn": "Send",
+    "submitting": "Sending...",
+    "successTitle": "Message sent!",
+    "successMsg": "Thanks for reaching out. I'll get back to you within 24h.",
+    "errorMsg": "Something went wrong. Please try again or contact me via WhatsApp."
+  },
+  "trabalhos": {
+    "pageTitle": "Works",
+    "allLabel": "All works"
+  },
+  "caseStudy": {
+    "clientLabel": "Client",
+    "yearLabel": "Year",
+    "categoryLabel": "Category",
+    "servicesLabel": "Services",
+    "prevLabel": "Previous",
+    "nextLabel": "Next",
+    "otherLabel": "Other projects"
+  },
+  "metadata": {
+    "home": {
+      "title": "Bruno Bragaia Design — Visual Identity & Branding Studio",
+      "description": "Studio specialized in visual identity and branding. We create brands that stay in memory — with positioning, purpose and design that truly make sense."
+    },
+    "quemSou": {
+      "title": "About",
+      "description": "Bruno Bragaia — designer specialized in visual identity and branding. Learn about the story and vision behind the studio."
+    },
+    "orcamento": {
+      "title": "Quote",
+      "description": "Request a quote for visual identity or branding. Let's talk about your project."
+    },
+    "trabalhos": {
+      "title": "Works",
+      "description": "Portfolio of visual identity and branding projects created by Bruno Bragaia Design studio."
+    }
+  }
+}

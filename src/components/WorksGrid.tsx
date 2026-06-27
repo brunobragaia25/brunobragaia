@@ -3,12 +3,13 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Project } from "./WorksSection";
+import { useDict, useLang } from "@/context/DictContext";
 
 const easing: [number, number, number, number] = [0.25, 0.1, 0.25, 1];
 
-function FeaturedCard({ project, image, index }: { project: Project; image: string; index: number }) {
+function FeaturedCard({ project, image, index, lang }: { project: Project; image: string; index: number; lang: string }) {
   return (
-    <Link href={`/trabalhos/${project.slug.current}`}>
+    <Link href={`/${lang}/trabalhos/${project.slug.current}`}>
     <motion.div
       className="group relative overflow-hidden cursor-pointer"
       initial={{ opacity: 0, y: 60 }}
@@ -44,9 +45,9 @@ function FeaturedCard({ project, image, index }: { project: Project; image: stri
   );
 }
 
-function GridCard({ project, image, index }: { project: Project; image: string; index: number }) {
+function GridCard({ project, image, index, lang }: { project: Project; image: string; index: number; lang: string }) {
   return (
-    <Link href={`/trabalhos/${project.slug.current}`}>
+    <Link href={`/${lang}/trabalhos/${project.slug.current}`}>
     <motion.div
       className="group relative overflow-hidden cursor-pointer"
       initial={{ opacity: 0, y: 40 }}
@@ -91,9 +92,12 @@ export default function WorksGrid({
   grid: Project[];
   imageMap: Record<string, string>;
 }) {
+  const dict = useDict();
+  const lang = useLang();
+  const w = dict.works;
+
   return (
     <section id="trabalhos" className="bg-black pt-32 pb-16 px-5">
-      {/* Header */}
       <div className="max-w-[1280px] mx-auto mb-16 flex flex-col md:flex-row items-start md:items-end justify-between gap-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -102,15 +106,15 @@ export default function WorksGrid({
           transition={{ duration: 0.7, ease: easing }}
         >
           <span className="text-[#bf0603] text-[12px] tracking-[2.4px] uppercase block mb-3" style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 500 }}>
-            Trabalhos
+            {w.eyebrow}
           </span>
           <h2 className="text-white text-[56px] leading-[0.95]" style={{ fontFamily: "'PP Neue Montreal', sans-serif", fontWeight: 400 }}>
-            Projetos<br />selecionados
+            {w.heading}
           </h2>
         </motion.div>
 
         <motion.a
-          href="/trabalhos"
+          href={`/${lang}/trabalhos`}
           className="group overflow-hidden border border-white text-white text-[13px] tracking-[2px] uppercase px-8 h-12 flex items-center justify-center rounded-full transition-colors duration-300 mb-2"
           style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 600 }}
           initial={{ opacity: 0 }}
@@ -119,13 +123,12 @@ export default function WorksGrid({
           transition={{ duration: 0.7, delay: 0.3 }}
         >
           <span className="relative inline-block overflow-hidden" style={{ lineHeight: "1em", height: "1em" }}>
-            <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-[100%]">Ver todos</span>
-            <span className="block absolute inset-x-0 top-[100%] transition-transform duration-300 ease-out group-hover:-translate-y-[100%]">Ver todos</span>
+            <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-[100%]">{w.cta}</span>
+            <span className="block absolute inset-x-0 top-[100%] transition-transform duration-300 ease-out group-hover:-translate-y-[100%]">{w.cta}</span>
           </span>
         </motion.a>
       </div>
 
-      {/* Divider */}
       <motion.div
         className="w-full h-px bg-white/10 mb-16"
         initial={{ scaleX: 0 }}
@@ -135,20 +138,18 @@ export default function WorksGrid({
         style={{ transformOrigin: "left" }}
       />
 
-      {/* Featured — 2 colunas full width */}
       {featured.length > 0 && (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
           {featured.map((p, i) => (
-            <FeaturedCard key={p._id} project={p} image={imageMap[p._id] ?? ""} index={i} />
+            <FeaturedCard key={p._id} project={p} image={imageMap[p._id] ?? ""} index={i} lang={lang} />
           ))}
         </div>
       )}
 
-      {/* Grid — 3 colunas full width */}
       {grid.length > 0 && (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {grid.map((p, i) => (
-            <GridCard key={p._id} project={p} image={imageMap[p._id] ?? ""} index={i} />
+            <GridCard key={p._id} project={p} image={imageMap[p._id] ?? ""} index={i} lang={lang} />
           ))}
         </div>
       )}

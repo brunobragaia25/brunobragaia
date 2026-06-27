@@ -1,0 +1,187 @@
+{
+  "navbar": {
+    "trabalhos": "TRABALHOS",
+    "servicos": "SERVIÇOS",
+    "etapas": "ETAPAS",
+    "quemSou": "QUEM SOU",
+    "cta": "Vamos conversar"
+  },
+  "hero": {
+    "heading": ["Transformamos marcas", "em experiências", "memoráveis."],
+    "subheading": "Unimos estratégia, design e cultura para criar marcas que moldam mercados.",
+    "ctaPrimary": "Vamos conversar",
+    "ctaSecondary": "Meus trabalhos"
+  },
+  "works": {
+    "eyebrow": "Trabalhos",
+    "heading": "Projetos em destaque",
+    "cta": "Ver todos os trabalhos",
+    "categories": {
+      "all": "Todos",
+      "branding": "Branding",
+      "uiux": "UI/UX",
+      "web": "Web"
+    }
+  },
+  "servicos": {
+    "eyebrow": "Serviços",
+    "heading": "Identidade",
+    "headingItalic": "Visual.",
+    "intro": "A identidade visual é a essência da sua marca traduzida de forma visual. Não é sobre ser bonito. É sobre ser reconhecido na hora certa, pelo motivo certo, de um jeito que só a sua marca consegue ser.",
+    "entregasLabel": "O que entregamos",
+    "readyCta": "Pronto(a) pra começar?",
+    "ctaBtn": "Vamos conversar",
+    "entregas": [
+      {
+        "title": "Uma marca que as pessoas lembram.",
+        "desc": "Logo, cores, tipografia e todo o universo visual da sua marca pensado pra criar uma identidade que gruda. Sabe aquela marca que você lembra sem esforço? É isso que a gente constrói."
+      },
+      {
+        "title": "Consistência que gera confiança.",
+        "desc": "A inconsistência é silenciosa, mas o cliente sente. Uma marca que aparece igual em todo lugar transmite algo que nenhum copy consegue: credibilidade."
+      },
+      {
+        "title": "A sensação de que sua marca chegou.",
+        "desc": "Tem um momento em que o cliente olha pra marca e pensa: isso representa de verdade o que a gente é. É esse sentimento que a gente trabalha pra entregar."
+      },
+      {
+        "title": "Posicionamento que ocupa um lugar claro.",
+        "desc": "A gente descobre onde sua marca tem mais força e constrói a partir daí. Sem achismo, sem copiar concorrente. Só o que faz sentido pro seu negócio e pra quem você quer atrair."
+      }
+    ]
+  },
+  "processo": {
+    "eyebrow": "Como trabalhamos",
+    "heading": "Etapas do Desenvolvimento",
+    "entregasTitle": "Entregas do Projeto",
+    "readyCta": "Pronto(a) pra começar?",
+    "ctaBtn": "Vamos conversar",
+    "clientParticipation": "* Participação direta do cliente",
+    "entregas": [
+      "Logotipo em variações RGB e CMYK nos formatos AI, PNG, PDF e SVG",
+      "Paleta de cores em RGB, CMYK e Pantone (opcional)",
+      "Tipografia Principal e Complementar",
+      "Grafismos de apoio",
+      "Materiais previamente combinados",
+      "Apresentação completa do projeto",
+      "Materiais adicionais"
+    ],
+    "etapas": [
+      {
+        "numero": "01",
+        "nome": "Naming",
+        "desc": "O naming é o ponto de partida estratégico para a construção da sua marca. Um bom nome vai além de uma simples palavra: ele comunica a essência do seu negócio, cria conexão com o público e se destaca no mercado.",
+        "steps": [
+          { "title": "Imersão e Pesquisa", "desc": "Serão analisados a empresa, seu público e diferenciais, além do mercado e concorrência, definindo os valores e a identidade estratégica da marca." },
+          { "title": "Criação e Desenvolvimento", "desc": "O Naming será desenvolvido estrategicamente, com verificação de disponibilidade e análise fonética para garantir um nome único, memorável e adequado ao mercado." },
+          { "title": "Apresentação e Refinamento", "desc": "Será entregue um relatório com 3 a 5 sugestões de nomes, cada uma acompanhada de uma justificativa conceitual." },
+          { "title": "Entrega Final", "desc": "O nome final validado será entregue junto com orientações para registro no INPI e sugestões de domínio e perfis para redes sociais." }
+        ]
+      },
+      {
+        "numero": "02",
+        "nome": "Estratégia",
+        "desc": "Ter uma estratégia bem definida antes de começar é essencial para garantir o posicionamento correto da marca, agregar valor e atrair o público certo.",
+        "steps": [
+          { "title": "Briefing", "desc": "No início do projeto, enviamos um briefing para que você compartilhe detalhes sobre sua empresa, público-alvo e persona." },
+          { "title": "Pesquisa", "desc": "Após o briefing, realizamos uma pesquisa detalhada sobre o segmento da marca, buscando referências relevantes." },
+          { "title": "DNA da Marca", "desc": "Com o briefing preenchido e a pesquisa concluída, definimos a personalidade da marca, alinhada ao seu DNA." },
+          { "title": "Moodboard", "desc": "Iniciamos a elaboração do moodboard, selecionando referências visuais e gráficas que inspirem o projeto.", "note": "* Participação direta do cliente" },
+          { "title": "Concorrentes", "desc": "Analisamos o posicionamento dos concorrentes para identificar oportunidades de diferenciação e criar uma estratégia única." }
+        ]
+      },
+      {
+        "numero": "03",
+        "nome": "Identidade Visual & Branding",
+        "desc": "Com a estratégia definida, iniciamos a criação da Identidade Visual da marca — logotipo, paleta de cores, tipografia e demais componentes gráficos, sempre alinhados à estratégia estabelecida.",
+        "steps": [
+          { "title": "Cores", "desc": "Definimos a paleta de cores da Identidade Visual, especificando os tons em RGB, CMYK e, opcionalmente, Pantone.", "note": "* Participação direta do cliente" },
+          { "title": "Tipografia", "desc": "A identidade visual é composta por duas tipografias: a principal, utilizada no logotipo, e a complementar, utilizada nos materiais institucionais." },
+          { "title": "Logotipo", "desc": "Passamos à criação do logotipo e todas as suas variações: versões vertical, horizontal e circular." },
+          { "title": "Grafismos de apoio", "desc": "Elementos visuais como padrões, texturas e designs que reforçam e complementam a Identidade Visual." },
+          { "title": "Aplicações", "desc": "Utilizamos mockups para visualizar a marca em contextos reais, como embalagens, sinalizações e materiais gráficos." },
+          { "title": "Apresentação", "desc": "Desenvolvemos a apresentação final em PDF com explicação detalhada gravada, facilitando a análise e aprovação do projeto." }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "tagline": ["Marcas que ficam na memória", "não são coincidência.", "São intencionais."],
+    "cta": "Vamos conversar",
+    "socialLabel": "Social",
+    "navLabel": "Navegação",
+    "navLinks": [
+      { "label": "Trabalhos", "href": "/#trabalhos" },
+      { "label": "Sobre", "href": "/quem-sou" },
+      { "label": "Contato", "href": "https://wa.me/5511992656555" }
+    ],
+    "copyright": "© 2026 Todos os direitos reservados",
+    "devBy": "Desenvolvido por"
+  },
+  "quemSou": {
+    "eyebrow": "Quem sou",
+    "title": "BRUNO BRAGAIA,\n30 ANOS.",
+    "p1": "Sou graduado em Publicidade e Propaganda pela Universidade Presbiteriana Mackenzie, com especialização em ferramentas essenciais para design e criação visual, como Adobe Photoshop, Illustrator e Figma.",
+    "p2": "Além disso, possuo formação no curso ID Class para Identidades Visuais, ministrado por Marcelo Kimura, o que me permite desenvolver projetos de identidade visual com embasamento técnico e criativo.",
+    "toolsLabel": "Ferramentas & Skills"
+  },
+  "orcamento": {
+    "eyebrow": "Orçamento",
+    "heading": "Vamos criar\nalgo juntos?",
+    "subheading": "Preencha o formulário abaixo e entro em contato em até 24h.",
+    "whatsappLabel": "Prefere pelo WhatsApp?",
+    "whatsappBtn": "Chamar no WhatsApp",
+    "labels": {
+      "name": "Nome",
+      "email": "E-mail",
+      "phone": "Telefone / WhatsApp",
+      "projectType": "Tipo de Projeto",
+      "budget": "Faixa de Investimento",
+      "message": "Conta mais sobre o projeto"
+    },
+    "placeholders": {
+      "name": "Seu nome completo",
+      "email": "seu@email.com",
+      "phone": "(11) 99999-9999",
+      "message": "O que você precisa? Quanto mais detalhes, melhor."
+    },
+    "projectTypes": ["Branding", "UI/UX Design", "Web Design", "Outro"],
+    "budgets": ["Até R$ 3.000", "R$ 3.000 – R$ 8.000", "R$ 8.000 – R$ 20.000", "Acima de R$ 20.000", "A definir"],
+    "submitBtn": "Enviar",
+    "submitting": "Enviando...",
+    "successTitle": "Mensagem enviada!",
+    "successMsg": "Obrigado pelo contato. Retorno em até 24h.",
+    "errorMsg": "Algo deu errado. Tente novamente ou entre em contato pelo WhatsApp."
+  },
+  "trabalhos": {
+    "pageTitle": "Trabalhos",
+    "allLabel": "Todos os trabalhos"
+  },
+  "caseStudy": {
+    "clientLabel": "Cliente",
+    "yearLabel": "Ano",
+    "categoryLabel": "Categoria",
+    "servicesLabel": "Serviços",
+    "prevLabel": "Anterior",
+    "nextLabel": "Próximo",
+    "otherLabel": "Outros projetos"
+  },
+  "metadata": {
+    "home": {
+      "title": "Bruno Bragaia Design — Estúdio de Identidade Visual & Branding",
+      "description": "Estúdio especializado em identidade visual e branding. Criamos marcas que ficam na memória — com posicionamento, propósito e design que fazem sentido de verdade."
+    },
+    "quemSou": {
+      "title": "Quem Sou",
+      "description": "Bruno Bragaia — designer especializado em identidade visual e branding. Conheça a história e a visão por trás do estúdio."
+    },
+    "orcamento": {
+      "title": "Orçamento",
+      "description": "Solicite um orçamento para identidade visual ou branding. Vamos conversar sobre o seu projeto."
+    },
+    "trabalhos": {
+      "title": "Trabalhos",
+      "description": "Portfólio de projetos de identidade visual e branding criados pelo estúdio Bruno Bragaia Design."
+    }
+  }
+}

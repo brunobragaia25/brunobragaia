@@ -4,19 +4,22 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import { useDict } from "@/context/DictContext";
 
 const easing: [number, number, number, number] = [0.25, 0.1, 0.25, 1];
 
 const tools = ["Figma", "Adobe Photoshop", "Adobe Illustrator", "Branding", "UI/UX"];
 
 export default function QuemSou() {
+  const dict = useDict();
+  const q = dict.quemSou;
+
   return (
     <main className="bg-black text-white min-h-screen">
       <Navbar />
 
       <section className="relative px-5 pt-36 pb-0">
-        {/* Background foto */}
-        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden hidden md:block">
           <Image
             src="/hero-portrait.png"
             alt=""
@@ -27,12 +30,9 @@ export default function QuemSou() {
         </div>
 
         <div className="relative z-10 max-w-[1280px] mx-auto">
-
-          {/* Top: nome + texto */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-end pb-20">
             <div />
 
-            {/* Right: conteúdo */}
             <motion.div
               className="pt-4 flex flex-col gap-10"
               initial={{ opacity: 0, x: 40 }}
@@ -44,13 +44,13 @@ export default function QuemSou() {
                   className="text-[#bf0603] text-[12px] tracking-[2.4px] uppercase block mb-6"
                   style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 500 }}
                 >
-                  Quem sou
+                  {q.eyebrow}
                 </span>
                 <h1
-                  className="text-white leading-[0.92] mb-10"
+                  className="text-white leading-[0.92] mb-10 whitespace-pre-line"
                   style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 600, fontSize: "clamp(40px, 5vw, 72px)" }}
                 >
-                  BRUNO BRAGAIA,<br />30 ANOS.
+                  {q.title}
                 </h1>
               </div>
 
@@ -59,23 +59,22 @@ export default function QuemSou() {
                   className="text-white text-[18px] leading-relaxed"
                   style={{ fontFamily: "'PP Neue Montreal', sans-serif", fontWeight: 400 }}
                 >
-                  Sou graduado em Publicidade e Propaganda pela Universidade Presbiteriana Mackenzie, com especialização em ferramentas essenciais para design e criação visual, como Adobe Photoshop, Illustrator e Figma.
+                  {q.p1}
                 </p>
                 <p
                   className="text-[#a8a8a8] text-[18px] leading-relaxed"
                   style={{ fontFamily: "'PP Neue Montreal', sans-serif", fontWeight: 300 }}
                 >
-                  Além disso, possuo formação no curso ID Class para Identidades Visuais, ministrado por Marcelo Kimura, o que me permite desenvolver projetos de identidade visual com embasamento técnico e criativo.
+                  {q.p2}
                 </p>
               </div>
 
-              {/* Tools */}
               <div>
                 <p
                   className="text-[#a8a8a8] text-[11px] tracking-[2px] uppercase mb-4"
                   style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 500 }}
                 >
-                  Ferramentas & Skills
+                  {q.toolsLabel}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {tools.map((tool) => (
@@ -89,10 +88,8 @@ export default function QuemSou() {
                   ))}
                 </div>
               </div>
-
             </motion.div>
           </div>
-
         </div>
       </section>
 

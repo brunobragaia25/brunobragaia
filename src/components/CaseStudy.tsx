@@ -1,9 +1,11 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
+import { useDict, useLang } from "@/context/DictContext";
+
 const easing: [number, number, number, number] = [0.25, 0.1, 0.25, 1];
 
 interface GalleryItem {
@@ -56,23 +58,25 @@ export default function CaseStudy({
   next,
   otherProjects,
 }: Props) {
+  const dict = useDict();
+  const lang = useLang();
+  const cs = dict.caseStudy;
+
   return (
     <main className="bg-black text-white min-h-screen">
       <Navbar />
 
-      {/* Hero */}
       <section className="px-5 pt-28 pb-20">
         <div className="max-w-[1280px] mx-auto">
-          {/* Back link */}
           <Link
-            href="/"
+            href={`/${lang}`}
             className="group overflow-hidden inline-flex items-center gap-2 border border-white/20 rounded-full px-6 h-10 text-[#a8a8a8] text-[12px] tracking-[2px] uppercase hover:border-white/50 hover:text-white transition-colors duration-300 mb-12 mt-8"
             style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 500 }}
           >
             <span>←</span>
             <span className="relative inline-block overflow-hidden" style={{ lineHeight: "1em", height: "1em" }}>
-              <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-[100%]">Voltar</span>
-              <span className="block absolute inset-x-0 top-[100%] transition-transform duration-300 ease-out group-hover:-translate-y-[100%]">Voltar</span>
+              <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-[100%]">{lang === "en" ? "Back" : "Voltar"}</span>
+              <span className="block absolute inset-x-0 top-[100%] transition-transform duration-300 ease-out group-hover:-translate-y-[100%]">{lang === "en" ? "Back" : "Voltar"}</span>
             </span>
           </Link>
           <motion.div
@@ -94,7 +98,6 @@ export default function CaseStudy({
             </h1>
           </motion.div>
 
-          {/* Meta row */}
           <motion.div
             className="flex flex-wrap gap-16 border-t border-white/10 pt-8"
             initial={{ opacity: 0 }}
@@ -107,7 +110,7 @@ export default function CaseStudy({
                   className="text-[#a8a8a8] text-[11px] tracking-[2px] uppercase block mb-2"
                   style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 500 }}
                 >
-                  Cliente
+                  {cs.clientLabel}
                 </span>
                 <span
                   className="text-white text-[16px]"
@@ -122,7 +125,7 @@ export default function CaseStudy({
                 className="text-[#a8a8a8] text-[11px] tracking-[2px] uppercase block mb-2"
                 style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 500 }}
               >
-                Ano
+                {cs.yearLabel}
               </span>
               <span
                 className="text-white text-[16px]"
@@ -137,7 +140,7 @@ export default function CaseStudy({
                   className="text-[#a8a8a8] text-[11px] tracking-[2px] uppercase block mb-2"
                   style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 500 }}
                 >
-                  Serviços
+                  {cs.servicesLabel}
                 </span>
                 <span
                   className="text-white text-[16px]"
@@ -151,7 +154,6 @@ export default function CaseStudy({
         </div>
       </section>
 
-      {/* Cover image — full width */}
       {coverUrl && (
         <motion.div
           className="w-full aspect-[16/9] overflow-hidden"
@@ -159,15 +161,10 @@ export default function CaseStudy({
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.3, ease: easing }}
         >
-          <img
-            src={coverUrl}
-            alt={title}
-            className="w-full h-full object-cover"
-          />
+          <img src={coverUrl} alt={title} className="w-full h-full object-cover" />
         </motion.div>
       )}
 
-      {/* Intro text */}
       {(description || intro) && (
         <section className="px-5 py-24">
           <div className="max-w-[800px] mx-auto">
@@ -199,7 +196,6 @@ export default function CaseStudy({
         </section>
       )}
 
-      {/* Gallery */}
       {gallery.length > 0 && (
         <section className="px-5 pb-24 space-y-5">
           {gallery.map((img, i) =>
@@ -214,10 +210,7 @@ export default function CaseStudy({
               >
                 <img src={img.url} alt={img.caption ?? ""} className="w-full object-cover" />
                 {img.caption && (
-                  <p
-                    className="text-[#a8a8a8] text-[13px] mt-3"
-                    style={{ fontFamily: "'Clash Grotesk', sans-serif" }}
-                  >
+                  <p className="text-[#a8a8a8] text-[13px] mt-3" style={{ fontFamily: "'Clash Grotesk', sans-serif" }}>
                     {img.caption}
                   </p>
                 )}
@@ -225,7 +218,6 @@ export default function CaseStudy({
             ) : null
           )}
 
-          {/* Non-full-width items in 2-col grid */}
           {gallery.filter((img) => !img.fullWidth).length > 0 && (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               {gallery
@@ -241,10 +233,7 @@ export default function CaseStudy({
                   >
                     <img src={img.url} alt={img.caption ?? ""} className="w-full object-cover" />
                     {img.caption && (
-                      <p
-                        className="text-[#a8a8a8] text-[13px] mt-3"
-                        style={{ fontFamily: "'Clash Grotesk', sans-serif" }}
-                      >
+                      <p className="text-[#a8a8a8] text-[13px] mt-3" style={{ fontFamily: "'Clash Grotesk', sans-serif" }}>
                         {img.caption}
                       </p>
                     )}
@@ -255,16 +244,14 @@ export default function CaseStudy({
         </section>
       )}
 
-      {/* Divider */}
       <div className="px-5">
         <div className="w-full h-px bg-white/10" />
       </div>
 
-      {/* Next / Prev navigation */}
       <section className="grid grid-cols-1 md:grid-cols-2">
         {prev ? (
           <Link
-            href={`/trabalhos/${prev.slug}`}
+            href={`/${lang}/trabalhos/${prev.slug}`}
             className="group relative overflow-hidden aspect-[4/3] flex flex-col justify-end p-8 border-r border-white/10"
           >
             {prev.image && (
@@ -279,12 +266,9 @@ export default function CaseStudy({
                 className="text-[#a8a8a8] text-[11px] tracking-[2px] uppercase block mb-2"
                 style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 500 }}
               >
-                ← Anterior
+                ← {cs.prevLabel}
               </span>
-              <p
-                className="text-white text-[24px] leading-tight"
-                style={{ fontFamily: "'PP Neue Montreal', sans-serif", fontWeight: 400 }}
-              >
+              <p className="text-white text-[24px] leading-tight" style={{ fontFamily: "'PP Neue Montreal', sans-serif", fontWeight: 400 }}>
                 {prev.title}
               </p>
             </div>
@@ -295,7 +279,7 @@ export default function CaseStudy({
 
         {next ? (
           <Link
-            href={`/trabalhos/${next.slug}`}
+            href={`/${lang}/trabalhos/${next.slug}`}
             className="group relative overflow-hidden aspect-[4/3] flex flex-col justify-end items-end p-8 text-right"
           >
             {next.image && (
@@ -310,12 +294,9 @@ export default function CaseStudy({
                 className="text-[#a8a8a8] text-[11px] tracking-[2px] uppercase block mb-2"
                 style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 500 }}
               >
-                Próximo →
+                {cs.nextLabel} →
               </span>
-              <p
-                className="text-white text-[24px] leading-tight"
-                style={{ fontFamily: "'PP Neue Montreal', sans-serif", fontWeight: 400 }}
-              >
+              <p className="text-white text-[24px] leading-tight" style={{ fontFamily: "'PP Neue Montreal', sans-serif", fontWeight: 400 }}>
                 {next.title}
               </p>
             </div>
@@ -324,25 +305,22 @@ export default function CaseStudy({
           <div />
         )}
       </section>
-      {/* Outros projetos */}
+
       {otherProjects.length > 0 && (
         <section className="px-5 py-24 bg-black">
           <div className="max-w-[1280px] mx-auto">
             <div className="flex items-end justify-between mb-12">
-              <h2
-                className="text-white text-[36px] leading-tight"
-                style={{ fontFamily: "'PP Neue Montreal', sans-serif", fontWeight: 400 }}
-              >
-                Outros projetos
+              <h2 className="text-white text-[36px] leading-tight" style={{ fontFamily: "'PP Neue Montreal', sans-serif", fontWeight: 400 }}>
+                {cs.otherLabel}
               </h2>
               <Link
-                href="/trabalhos"
+                href={`/${lang}/trabalhos`}
                 className="group overflow-hidden border border-white/20 text-white text-[12px] tracking-[2px] uppercase px-6 h-10 flex items-center justify-center rounded-full hover:border-white transition-colors duration-300"
                 style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 500 }}
               >
                 <span className="relative inline-block overflow-hidden" style={{ lineHeight: "1em", height: "1em" }}>
-                  <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-[100%]">Ver todos</span>
-                  <span className="block absolute inset-x-0 top-[100%] transition-transform duration-300 ease-out group-hover:-translate-y-[100%]">Ver todos</span>
+                  <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-[100%]">{dict.works.cta}</span>
+                  <span className="block absolute inset-x-0 top-[100%] transition-transform duration-300 ease-out group-hover:-translate-y-[100%]">{dict.works.cta}</span>
                 </span>
               </Link>
             </div>
@@ -355,7 +333,7 @@ export default function CaseStudy({
                   viewport={{ once: true, margin: "-60px" }}
                   transition={{ duration: 0.6, ease: easing, delay: i * 0.08 }}
                 >
-                  <Link href={`/trabalhos/${p.slug}`} className="group block">
+                  <Link href={`/${lang}/trabalhos/${p.slug}`} className="group block">
                     <div className="relative w-full aspect-[4/3] overflow-hidden bg-[#1a1a1a] mb-4">
                       {p.image && (
                         <img
@@ -366,16 +344,10 @@ export default function CaseStudy({
                       )}
                       <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-30 transition-opacity duration-500" />
                     </div>
-                    <span
-                      className="text-[#a8a8a8] text-[11px] tracking-[2px] uppercase block mb-1"
-                      style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 500 }}
-                    >
+                    <span className="text-[#a8a8a8] text-[11px] tracking-[2px] uppercase block mb-1" style={{ fontFamily: "'Clash Grotesk', sans-serif", fontWeight: 500 }}>
                       {p.category}
                     </span>
-                    <h3
-                      className="text-white text-[18px] leading-snug"
-                      style={{ fontFamily: "'PP Neue Montreal', sans-serif", fontWeight: 400 }}
-                    >
+                    <h3 className="text-white text-[18px] leading-snug" style={{ fontFamily: "'PP Neue Montreal', sans-serif", fontWeight: 400 }}>
                       {p.title}
                     </h3>
                   </Link>
